@@ -1,6 +1,6 @@
 module.exports = {
     apps: [{
-        script: 'frontend/src/app.js',
+        script: 'frontend/public/src/app.js',
 
         watch: '.'
     }, {

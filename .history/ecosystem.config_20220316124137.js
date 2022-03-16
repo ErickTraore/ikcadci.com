@@ -1,7 +1,6 @@
 module.exports = {
     apps: [{
-        script: 'frontend/src/app.js',
-
+        script: 'index.js',
         watch: '.'
     }, {
         script: './service-worker/',
@@ -14,7 +13,7 @@ module.exports = {
             host: '217.160.29.241',
             ref: 'origin/master',
             repo: 'https://github.com/ErickTraore/ikcadci.com.git',
-            path: '/var/www/html/ikcadci.com',
+            path: '/var/www/html',
             'pre-deploy-local': '',
             'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production',
             'pre-setup': ''
