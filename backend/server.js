@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var apiRouter = require('./apiRouter').router;
 var server = express();
 var req = require('request');
+var PORT = process.env.PORT || 8000;
 
 //instantiation
 server.use((req, res, next) => {
@@ -79,6 +80,6 @@ server.get('/', function(req, res) {
 server.use('/api/', apiRouter);
 
 
-server.listen(3000, function() {
-    console.log('Server en écoute :');
+server.listen(PORT, function() {
+    console.log('Server en écoute :', PORT);
 });

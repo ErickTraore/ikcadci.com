@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div id="app">
+
       <div id="container" class="projPrev"> 
               <div class="projPrev__groupo rotateLogo">
                   <img  alt="Logo-groupomania" src="./assets/plus/masque_kemet.png" class="projPrev__groupo__masq"> 
@@ -47,6 +48,7 @@
     </nav>
       <router-view/>
     </div>
+
 </template>
 
 <script>
@@ -73,7 +75,7 @@ export default {
      let myStorageToken = JSON.parse(objMySession)
      let token = myStorageToken.myToken;
     axios
-     .get('http://localhost:3000/api/users/me/',{
+     .get('https://localhost:3000/api/users/me/',{
             headers: {
               'Authorization': token
             }

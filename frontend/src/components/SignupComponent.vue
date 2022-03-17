@@ -106,7 +106,7 @@
       },
 
       post: function (user) {
-        this.axios.post('http://localhost:3000/api/users/register/', user)
+        this.axios.post('https://localhost:3000/api/users/register/', user)
           .then(response => {
             this.data = response.data
              this.$router.push({path: '/login'})
