@@ -51,7 +51,7 @@
         </form>
          <div>Vous avez déja un compte:</div>
      <div>
-       <a href="/signin#/login">Connectez-vous içi</a>
+       <a href="/login">Connectez-vous içi</a>
 
        </div>
     </div>
