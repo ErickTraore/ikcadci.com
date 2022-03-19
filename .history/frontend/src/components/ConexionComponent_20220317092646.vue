@@ -33,11 +33,8 @@
             </form>
           <div>Vous n'avez pas de compte:</div>
         <div>
-<<<<<<< HEAD
-=======
-          
->>>>>>> f9ad53d96f545aae5691495fa559ff557302d77d
-          <a class="labelForm" href="/signup">Créer un compte</a>
+          https://github.com/ErickTraore/ikcadci.com.git
+          <a class="labelForm" href="/Singnup/signup">Créer un compte</a>
 
           </div>
         </div>
@@ -88,11 +85,7 @@
       },
 
       post: function (user) {
-<<<<<<< HEAD
-         this.axios.post('http://0.0.0.0:3000/api/users/login/',user)
-=======
-         this.axios.post('https://localhost:3000/api/users/login/',user)
->>>>>>> f9ad53d96f545aae5691495fa559ff557302d77d
+         this.axios.post('http://localhost:3000/api/users/login/',user)
           .then(reponse => {
             this.user = reponse.data
                     // stokage token dans localStorage
