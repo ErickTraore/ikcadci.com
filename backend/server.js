@@ -79,7 +79,10 @@ server.get('/', function(req, res) {
 
 server.use('/api/', apiRouter);
 
+// const server = http.createServer((req, res) => {
+//     res.end('Voilà la réponse du serveur !');
+// });
 
-server.listen(PORT, function() {
+server.listen(process.env.PORT || PORT, function() {
     console.log('Server en écoute :', PORT);
 });

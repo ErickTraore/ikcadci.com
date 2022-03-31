@@ -55,7 +55,7 @@
         let myId = myStorageToken.myId;
         setTimeout(() => {
         axios
-        .get('http://localhost:3000/api/formations/')
+        .get('https://212.227.142.69:3000/api/formations/')
         .then(response => {
           this.myId = myId
           this.formations = response.data

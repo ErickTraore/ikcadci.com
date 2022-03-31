@@ -1,7 +1,6 @@
 <template>
-    <div class='group'>
         <div class='group__header'>
-          <div>CONNEXION</div>
+          <div>CONEXION</div>
             <form @submit="postData" method="post">
                 <div class='group__header__body '>
                     <p v-if="errors.length">
@@ -33,15 +32,11 @@
             </form>
           <div>Vous n'avez pas de compte:</div>
         <div>
-<<<<<<< HEAD
-=======
           
->>>>>>> f9ad53d96f545aae5691495fa559ff557302d77d
-          <a class="labelForm" href="/signup">Créer un compte</a>
+          <a class="labelForm" href="#/signup">Créer un compte</a>
 
           </div>
         </div>
-    </div>
 </template>
 
 <script>
@@ -88,11 +83,8 @@
       },
 
       post: function (user) {
-<<<<<<< HEAD
-         this.axios.post('http://0.0.0.0:3000/api/users/login/',user)
-=======
-         this.axios.post('https://localhost:3000/api/users/login/',user)
->>>>>>> f9ad53d96f545aae5691495fa559ff557302d77d
+        //  this.axios.post('https://localhost:3000/api/users/login/',user)
+         this.axios.post('https://212.227.142.69:3000/api/users/login/',user)
           .then(reponse => {
             this.user = reponse.data
                     // stokage token dans localStorage
@@ -108,7 +100,7 @@
 
                     })
 
-          .catch(error => console.log(error()))
+          .catch(error => console.log(error()));
       },
 
       validEmail: function (email) {

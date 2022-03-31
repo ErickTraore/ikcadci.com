@@ -75,7 +75,7 @@ export default {
      let myStorageToken = JSON.parse(objMySession)
      let token = myStorageToken.myToken;
     axios
-     .get('https://localhost:0.0.0.0/api/users/me/',{
+     .get('https://212.227.142.69:3000/api/users/me/',{
             headers: {
               'Authorization': token
             }

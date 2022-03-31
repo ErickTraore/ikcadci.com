@@ -48,7 +48,7 @@
     },
     created() {
       axios
-        .get('http://localhost:3000/api/users/')
+        .get('http://212.227.142.69:3000/api/users/')
         .then(response => {
           this.users= response.data
           })
@@ -59,14 +59,14 @@
         let objMySession = localStorage.getItem("obj")
         let myStorageToken = JSON.parse(objMySession)
         let token = myStorageToken.myToken;
-        this.axios.post('http://localhost:3000/api/users/' + id + '/del', null, {
+        this.axios.post('http://212.227.142.69:3000/api/users/' + id + '/del', null, {
             headers: {
               'Authorization': token
             }
           })
               .then(response => this.users = response.data)
                     axios
-                  .get('http://localhost:3000/api/users/')
+                  .get('http://212.227.142.69:3000/api/users/')
                   .then(response => {
                     this.users = response.data
                     })

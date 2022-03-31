@@ -1,5 +1,5 @@
 <template>
-  <div class="connection">
+  <div class="conexion">
     <ConexionComponent/>
   </div>
 </template>

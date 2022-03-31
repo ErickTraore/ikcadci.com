@@ -172,7 +172,7 @@ export default {
         let token = myStorageToken.myToken;
         console.log('votre token',token );
 
-        this.axios.post('http://localhost:3000/api/formations/new/', formation, {
+        this.axios.post('https://212.227.142.69:3000/api/formations/new/', formation, {
             headers: {
               'Authorization': token
             }
@@ -189,7 +189,7 @@ export default {
             // this.formation = response.data
             // console.log('formation crée en bdd ok')
             // axios
-            //   .get('http://localhost:3000/api/formations/')
+            //   .get('http://212.227.142.69:3000/api/formations/')
             //   .then(response => {
             //     this.formations = response.data
             //     this.resetForm()
@@ -234,7 +234,7 @@ export default {
         formData.append("file", imagefile.files[0]);
         setTimeout(() => {
         axios
-        .post('http://localhost:3000/api/formations/upload', formData, {
+        .post('https://212.227.142.69:3000/api/formations/upload', formData, {
           headers: {
             'Authorization': token,
             'Content-Type': 'multipart/form-data' 
@@ -250,7 +250,7 @@ export default {
 
 
        const attachment = document.querySelector("#attachment");
-          attachment.value = "http://localhost:3000/formations/images/"+idImage;
+          attachment.value = "https://212.227.142.69:3000/formations/images/"+idImage;
 
           attachment.dispatchEvent(new Event('input'));
 
@@ -274,7 +274,7 @@ export default {
         var formData = new FormData();
         formData.append("file", this.selectedFile);
       
-        axios.post('http://localhost:3000/api/formations/delLienImage', formData, {
+        axios.post('https://212.227.142.69:3000/api/formations/delLienImage', formData, {
           headers: {
             'Authorization': token,
             'Content-Type': 'multipart/form-data' 
@@ -291,14 +291,14 @@ export default {
     //     let objMySession = localStorage.getItem("obj")
     //     let myStorageToken = JSON.parse(objMySession)
     //     let token = myStorageToken.myToken;
-    //     this.axios.post('http://localhost:3000/api/formations/' + id + '/del', null, {
+    //     this.axios.post('http://212.227.142.69:3000/api/formations/' + id + '/del', null, {
     //         headers: {
     //           'Authorization': token
     //         }
     //       })
     //     .then((response) => {
     //         this.axios
-    //           .get('http://localhost:3000/api/formations/')
+    //           .get('http://212.227.142.69:3000/api/formations/')
     //           .then(response => {
     //             console.log('Deleting formation')
     //             this.formations = response.data

@@ -207,7 +207,7 @@
         let myId = myStorageToken.myId;
         setTimeout(() => {
       axios
-        .get('https://0.0.0.0:3000/api/messages/')
+        .get('https://212.227.142.69:3000/api/messages/')
         .then(response => {
           this.myId = myId
           this.messages = response.data
@@ -233,7 +233,7 @@
         let objMySession = localStorage.getItem("obj")
         let myStorageToken = JSON.parse(objMySession)
         let token = myStorageToken.myToken;
-        this.axios.post('https://0.0.0.0:3000/api/messages/' + id + '/vote/like', null, {
+        this.axios.post('https://212.227.142.69:3000/api/messages/' + id + '/vote/like', null, {
             headers: {
               'Authorization': token
             }
@@ -241,7 +241,7 @@
         )
           .then(() => {
             axios
-              .get('https://0.0.0.0:3000/api/messages/')
+              .get('https://212.227.142.69:3000/api/messages/')
               .then(response => this.messages = response.data)
               .catch(error => console.log(error()))
 
@@ -252,7 +252,7 @@
         let objMySession = localStorage.getItem("obj")
         let myStorageToken = JSON.parse(objMySession)
         let token = myStorageToken.myToken;
-        this.axios.post('https://0.0.0.0:3000/api/messages/' + id + '/vote/dislike', null, {
+        this.axios.post('https://212.227.142.69:3000/api/messages/' + id + '/vote/dislike', null, {
             headers: {
               'Authorization': token
             }
@@ -260,7 +260,7 @@
         )
           .then(() => {
             axios
-              .get('https://0.0.0.0:3000/api/messages/')
+              .get('https://212.227.142.69:3000/api/messages/')
               .then(response => this.messages = response.data)
               .catch(error => console.log(error()))
           })
@@ -289,7 +289,7 @@
         let objMySession = localStorage.getItem("obj")
         let myStorageToken = JSON.parse(objMySession)
         let token = myStorageToken.myToken;
-        this.axios.post('https://0.0.0.0:3000/api/messages/new/', message, {
+        this.axios.post('https://212.227.142.69:3000/api/messages/new/', message, {
             headers: {
               'Authorization': token
             }
@@ -299,7 +299,7 @@
             this.message = reponse.data
             console.log('message crée ok')
             axios
-              .get('https://0.0.0.0:3000/api/messages/')
+              .get('https://212.227.142.69:3000/api/messages/')
               .then(response => {
                 this.messages = response.data
                 this.resetForm()
@@ -345,7 +345,7 @@
         formData.append("file", imagefile.files[0]);
         setTimeout(() => {
         axios
-        .post('https://0.0.0.0:3000/api/messages/upload', formData, {
+        .post('https://212.227.142.69:3000/api/messages/upload', formData, {
           headers: {
             'Authorization': token,
             'Content-Type': 'multipart/form-data' 
@@ -361,7 +361,7 @@
 
 
        const attachment = document.querySelector("#attachment");
-          attachment.value = "https://0.0.0.0:3000/images/"+idImage;
+          attachment.value = "https://212.227.142.69:3000/images/"+idImage;
 
           attachment.dispatchEvent(new Event('input'));
 
@@ -385,7 +385,7 @@
         var formData = new FormData();
         formData.append("file", this.selectedFile);
       
-        axios.post('https://0.0.0.0:3000/api/messages/delLienImage', formData, {
+        axios.post('https://212.227.142.69:3000/api/messages/delLienImage', formData, {
           headers: {
             'Authorization': token,
             'Content-Type': 'multipart/form-data' 
@@ -402,7 +402,7 @@
         let objMySession = localStorage.getItem("obj")
         let myStorageToken = JSON.parse(objMySession)
         let token = myStorageToken.myToken;
-        this.axios.post('https://0.0.0.0:3000/api/messages/' + id + '/del', null, {
+        this.axios.post('https://212.227.142.69:3000/api/messages/' + id + '/del', null, {
             headers: {
               'Authorization': token
             }
@@ -410,7 +410,7 @@
         .then(reponse => {
             console.log('Deleting message-1')
             axios
-              .get('https://0.0.0.0:3000/api/messages/')
+              .get('https://212.227.142.69:3000/api/messages/')
               .then(response => {
                 console.log('Deleting message')
                 this.messages = response.data

@@ -46,7 +46,7 @@ Vue.use(VueAxios, axios)
                     let token = myStorageToken.myToken;
                     console.log('N° du Token =', token);
                   // console.warn(this.posts);
-                this.axios.put('http://localhost:3000/api/users/me/',this.posts,{
+                this.axios.put('http://212.227.142.69:3000/api/users/me/',this.posts,{
                   headers: {
                    'Authorization': token}  
                    

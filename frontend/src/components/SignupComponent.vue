@@ -51,7 +51,7 @@
         </form>
          <div>Vous avez déja un compte:</div>
      <div>
-       <a href="/login">Connectez-vous içi</a>
+       <a href="/signin#/login">Connectez-vous içi</a>
 
        </div>
     </div>
@@ -78,9 +78,9 @@
       }
     },
     methods: {
-      postData: function (e) {
+      postData: function () {
 
-        e.preventDefault();
+        // e.preventDefault();
 
         this.errors = [];
 
@@ -98,7 +98,33 @@
         } else if (!this.validEmail(this.user.email)) {
           this.errors.push('L\'adresse email est invalide.');
         }
+        // if (this.user.email) {
 
+        //  asyncLib.waterfall([
+        //     function(done) {
+        //          models.User.findOne({
+        //                  attributes: ["this.user.email"],
+        //                  where: { email: this.user.email }
+        //              })
+        //              .then(function(userFound) {
+        //                  done(userFound);
+        //              })
+        //              .catch(function(err) {
+        //                  return res.status(500).json({ 'error': 'unable to verify user' });
+        //              });
+        //      },
+        //      function(userFound) {
+        //          if (userFound) {
+        //             //  this.errors.push('L\'adresse email est déja utilisée.');
+        //             $testEmail=false;
+        //          }
+        //      }
+        //  ])
+        //   }
+        $testEmail=false;
+        if (!$testEmail) {
+          this.errors.push('L\'adresse email est déja utilisée.');
+        }
         if (!this.errors.length) {
           return this.post(this.user);
         }
@@ -106,7 +132,7 @@
       },
 
       post: function (user) {
-        this.axios.post('https://localhost:3000/api/users/register/', user)
+        this.axios.post('https://212.227.142.69:3000/api/users/register/', user)
           .then(response => {
             this.data = response.data
              this.$router.push({path: '/login'})

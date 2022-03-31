@@ -48,7 +48,7 @@
       let myStorageToken = JSON.parse(objMySession)
       let token = myStorageToken.myToken;
       axios
-        .get('http://0.0.0.0:3000/api/users/me/', {
+        .get('https://212.227.142.69:3000/api/users/me/', {
           headers: {
             'Authorization': token
           }
@@ -69,7 +69,7 @@
         let myStorageToken = JSON.parse(objMySession)
         let token = myStorageToken.myToken;
 
-        this.axios.put('http://0.0.0.0:3000/api/users/me/', this.posts, {
+        this.axios.put('https://212.227.142.69:3000/api/users/me/', this.posts, {
           headers: {
             'Authorization': token
           }
@@ -86,7 +86,7 @@
         let myStorageToken = JSON.parse(objMySession)
         let token = myStorageToken.myToken;
 
-        this.axios.post('http://0.0.0.0:3000/api/users/delProfil', null, {
+        this.axios.post('https://212.227.142.69:3000/api/users/delProfil', null, {
           headers: {
             'Authorization': token
           }
