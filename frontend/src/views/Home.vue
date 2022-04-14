@@ -65,12 +65,11 @@
                  <ul>
   </ul>
             </div>
-      
+
         </div>
             <div class='group__header__body'>
                 <form @submit="onPostData" method="post" enctype="multipart/form-data" name="message">
-                    
-                    
+
                     <label class="labelForm">Nouveau message avec image optionnelle</label> <br> <br>
                     <p v-if="errors.length">
                         <b>Merci de corriger les erreurs suivantes : </b>
@@ -122,11 +121,11 @@
                             </div>
                             <button @click="removeImage">Remove image</button>
                           </div>
-                         
+
                         </div><br><br>
                         <div>
                         </div>
-                      <button 
+                      <button
                       type="submit"
                       value="val"
                     >
@@ -201,7 +200,6 @@
     PulseLoader
     },
     created() {
-
        let objMySession = localStorage.getItem("obj")
         let myStorageToken = JSON.parse(objMySession)
         let myId = myStorageToken.myId;
@@ -218,12 +216,10 @@
         )
     }, 1000)
     },
-
   methods: {
       resetForm() {
         console.log('Reseting the form')
         var self = this; //you need this because *this* will refer to Object.keys below`
-
         //Iterate through each object field, key is name of the object field`
         Object.keys(this.message).forEach(function(key,index) {
           self.message[key] = '';

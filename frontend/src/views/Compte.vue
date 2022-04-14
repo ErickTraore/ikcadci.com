@@ -48,7 +48,7 @@
     },
     created() {
       axios
-        .get('http://212.227.142.69:3000/api/users/')
+        .get('https://212.227.142.69:3000/api/users/')
         .then(response => {
           this.users= response.data
           })

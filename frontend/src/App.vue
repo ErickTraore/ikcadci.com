@@ -22,8 +22,8 @@
             <li class="nav-item">
               <router-link class="nav-link" to="/profile">Profile</router-link>  
             </li>
-             <li class="nav-item">
-              <router-link class="nav-link" to="/listFormations">Formation</router-link>  
+              <li class="nav-item">
+              <router-link class="nav-link" to="/homeformation">Home-formations</router-link>  
             </li>
             <li class="nav-item">
               <router-link class="nav-link" v-if=logged to="/login">Login</router-link>  
@@ -72,18 +72,21 @@ export default {
   },
    created() {
      let objMySession = localStorage.getItem("obj")
-     let myStorageToken = JSON.parse(objMySession)
-     let token = myStorageToken.myToken;
-    axios
-     .get('https://212.227.142.69:3000/api/users/me/',{
-            headers: {
-              'Authorization': token
-            }
-          })
-        .then(response => {
-          this.item = response.data
-          })
-        .catch(error => console.log(error()))
+     if(objMySession){
+          let myStorageToken = JSON.parse(objMySession)
+          let token = myStorageToken.myToken;
+          
+          axios
+          .get('https://212.227.142.69:3000/api/users/me/',{
+                  headers: {
+                    'Authorization': token
+                  }
+                })
+              .then(response => {
+                this.item = response.data
+                })
+              .catch(error => console.log(error()))
+        }
   },
 
   props: {},

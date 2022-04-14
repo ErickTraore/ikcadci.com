@@ -69,6 +69,7 @@
     data() {
       return {
         errors: [],
+        testEmail: true,
         user: {
           username: null,
           bio: null,
@@ -77,19 +78,17 @@
         }
       }
     },
-    methods: {
-      postData: function () {
+   methods: {
+      postData: function (e) {
 
-        // e.preventDefault();
-
+        e.preventDefault();
         this.errors = [];
-
+     
         if (!this.user.password) {
           this.errors.push('Veillez saisir un mot de passe');
         } else if (!this.validPassword(this.user.password)) {
           this.errors.push('Votre mot de passe doit contenir entre 4 et 8 caractères et au moins un chiffre');
         }
-
         if (!this.user.username || this.user.username.length >= 13 || this.user.username.length <= 3) {
           this.errors.push('Votre pseudo doit contenir entre 4 et 12 caractères');
         }
@@ -97,47 +96,27 @@
           this.errors.push('Veillez saisir votre email');
         } else if (!this.validEmail(this.user.email)) {
           this.errors.push('L\'adresse email est invalide.');
-        }
-        // if (this.user.email) {
-
-        //  asyncLib.waterfall([
-        //     function(done) {
-        //          models.User.findOne({
-        //                  attributes: ["this.user.email"],
-        //                  where: { email: this.user.email }
-        //              })
-        //              .then(function(userFound) {
-        //                  done(userFound);
-        //              })
-        //              .catch(function(err) {
-        //                  return res.status(500).json({ 'error': 'unable to verify user' });
-        //              });
-        //      },
-        //      function(userFound) {
-        //          if (userFound) {
-        //             //  this.errors.push('L\'adresse email est déja utilisée.');
-        //             $testEmail=false;
-        //          }
-        //      }
-        //  ])
-        //   }
-        $testEmail=false;
-        if (!$testEmail) {
-          this.errors.push('L\'adresse email est déja utilisée.');
+        } 
+        if (this.testEmail == false) {
+          this.errors.push('L\'adresse email existe déja.');
         }
         if (!this.errors.length) {
           return this.post(this.user);
         }
 
       },
-
+  
       post: function (user) {
         this.axios.post('https://212.227.142.69:3000/api/users/register/', user)
           .then(response => {
             this.data = response.data
              this.$router.push({path: '/login'})
-          })
-          .catch(error => console.log(error()))
+              })
+          .catch((error) => {
+            console.log(error)
+            this.errors.push('L\'adresse email existe déjà.');
+            this.$router.push({path: '/signup'})
+            })
       },
 
       validEmail: function (email) {

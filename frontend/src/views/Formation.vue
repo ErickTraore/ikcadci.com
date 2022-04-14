@@ -36,6 +36,14 @@
                             name="duration"
                             placeholder="Durée de la formation"
   ><br> <br>
+      <input
+                            id="href"
+                            v-model="formation.href"
+                            type="text"
+                            name="href"
+                            placeholder="url de l'info"
+
+  ><br> <br>
                             <label class="isActive">Formation en cours? </label>
 
      <input
@@ -114,6 +122,7 @@ export default {
         titleFirst:'',
         titleSecond:'',
         niveau: '',
+        href: '',
         duration: '',
         isActive: true,
         },
@@ -125,6 +134,7 @@ export default {
         titleFirst: '',
         titleSecond:'',
         niveau: '',
+        href: '',
         duration: '',
         isActive: '',
         }
@@ -158,6 +168,11 @@ export default {
         } else if (this.formation.duration.length <= 1){
           this.errors.push('Votre durée de formation doit contenir plus d 1 caractere.');
         }
+         if (!this.formation.href) {
+          this.errors.push('Veillez saisir l url');
+        } else if (this.formation.href.length <= 1){
+          this.errors.push('Votre url doit contenir plus d 1 caractere.');
+        }
         if (!this.errors.length) {
           console.log('Vérification des inputs --> OK')
           return this.post(this.formation);
@@ -180,7 +195,6 @@ export default {
         )
          .then(function(Formation) {
             if (Formation) {
-
                 this.resetForm()
             }
                Formation.status(200).json(Formation);

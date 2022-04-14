@@ -15,7 +15,6 @@ import RingLoader from './RingLoader.vue'
 import BounceLoader from './BounceLoader.vue'
 import DotLoader from './DotLoader.vue'
 
-
 Vue.config.debug = true
 
 new Vue({

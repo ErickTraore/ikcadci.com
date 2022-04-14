@@ -15,6 +15,10 @@
                             {{item.duration}} 
                             </p>
                       </div>
+                      <div class="card__body__box__href">
+                       <!-- <a class="fa fa-info-circle" href="/#/infoseshw/"></a> -->
+                       <a class="fa fa-info-circle" :href="'/#/'+ item.href"></a>
+                      </div>
                    </div>
                </div>  
         </div>
@@ -41,6 +45,7 @@
         titleFirst:'',
         titleSecond:'',
         niveau: '',
+        href: '',
         duration: '',
         isActive: true,
         },

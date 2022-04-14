@@ -83,7 +83,6 @@
       },
 
       post: function (user) {
-        //  this.axios.post('https://localhost:3000/api/users/login/',user)
          this.axios.post('https://212.227.142.69:3000/api/users/login/',user)
           .then(reponse => {
             this.user = reponse.data
@@ -100,8 +99,13 @@
 
                     })
 
-          .catch(error => console.log(error()));
-      },
+          .catch((error) => {
+            console.log(error)
+            this.errors.push('Votre mot de passe est éronné.');
+            this.$router.push({path: '/login'})
+
+            })
+             },
 
       validEmail: function (email) {
         const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
