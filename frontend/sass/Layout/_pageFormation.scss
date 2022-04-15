@@ -13,14 +13,6 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    &__frame {
-        width: 100%;
-        padding: 0.5rem;
-        display: flex;
-        flex-wrap: wrap;
-        background-color: white;
-        color: blue;
-    }
     &__card {
         margin: auto;
         width: auto;
@@ -52,6 +44,14 @@
         &__show {
             height: auto;
             margin: 50px 0px 0px 0px;
+            &__frame {
+                width: 100%;
+                padding: 0.5rem;
+                display: flex;
+                flex-wrap: wrap;
+                background-color: white;
+                color: blue;
+            }
         }
     }
 }

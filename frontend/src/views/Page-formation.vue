@@ -7,7 +7,7 @@
                   <p>Nos formations diplomantes</p>
                   </div>
                 <div class="proj__card__show" v-show="isShowingGle"> 
-                    <div class="proj__frame">
+                    <div class="proj__card__show__frame">
                             <div>
                                 <button @click="isShowingOne ^= true">1  Motivation et finalité</button>
                             </div>
@@ -25,7 +25,7 @@
                                 <p>La création de ce programme est une expression concrète de la volonté des africains conscients de s’affranchir du carcan institutionnel de l’eurocentrisme et de créer un cadre afrocentrique d’enseignement et de recherche supérieur. Il s’agit de rompre avec toutes les formes de tutelles intellectuelles et académiques étrangères héritées de la période des déportations et de la colonisation et d’affirmer la présence et la vitalité de la pensée, des sciences, des techniques et des arts négro-africains (kamit) dans le monde d’aujourd’hui. Les diplômes de l’IKCAD sont donc des diplômes libres.</p>
                             </div>
                     </div>
-                    <div class="proj__frame">
+                    <div class="proj__card__show__frame">
                             <div>
                              <button @click="isShowingTwo ^= true">2 Finalité</button>
                             </div>
@@ -34,7 +34,7 @@
                                 <p>Grace à l’étude de ces grandes disciplines dans une approche afrocentrique, l’apprenant acquiert de solides méthodes de travail, une grande culture générale, une claire conscience historique, un amour pour le service à l’Afrique, un grand sens critique et un sens créatif très important.</p>
                             </div>
                     </div>
-                    <div class="proj__frame">
+                    <div class="proj__card__show__frame">
                             <div>
                                 <button @click="isShowingTree ^= true">3 Public cible</button>
                             </div>
@@ -44,7 +44,7 @@
                                 <p>En formation continue, le programme de kamitologie offre l’opportunité à des professionnels et à des chercheurs de se reconvertir dans la nouvelle économie de la renaissance africaine.</p>
                             </div>
                     </div>
-                    <div class="proj__frame">
+                    <div class="proj__card__show__frame">
                             <div>
                                 <button @click="isShowingFor ^= true">4 Les diplômes et perspective d’emploie</button>
                             </div>
@@ -55,7 +55,7 @@
                                     Les débouchés sont fonctions des spécialités du Seshsw et du Seshw Nsw : créateurs d’écoles afrocentriques, enseignants et formateurs, formateurs de formateurs, Ingénieur de formation, responsable du dispositif de formation, créateurs d’entreprises ou d’activités économiques afrocentrées, leaders d’associations civiles ou politiques, philosophes, théologien kamit, chercheur en afrologie, historien de l’art, historien, conférencier, communication, sociologue, journaliste, géostratège, consultant et conseillé specialisé.</p>
                             </div>
                     </div>
-                    <div class="proj__frame">
+                    <div class="proj__card__show__frame">
                             <div>
                                 <button @click="isShowingFive ^= true">5 Le dispositif de formation ouverte à distance</button>
                             </div>
@@ -69,7 +69,7 @@
                                 <p>Les cours exigent une lecture intensive et les étudiants doivent être prêts à écrire ou à discuter après avoir lu les textes requis. Les enseignants attribueront normalement des lectures et celles-ci seront discutées, débattues, critiquées de manière constructive et évaluées dans le contexte afrocentrique.</p>
                             </div>
                     </div> 
-                    <div class="proj__frame">
+                    <div class="proj__card__show__frame">
                             <div>
                             <button @click="isShowingSix ^= true">6 La direction du programme</button>
                             </div>
@@ -80,7 +80,7 @@
                                 <p>L’Imy r Sebayt conduit une équipe d’enseignants et de chercheurs tous compétents en kamitologie dans leur spécialité respective.</p>
                             </div>
                     </div>
-                    <div class="proj__frame">
+                    <div class="proj__card__show__frame">
                               <div>
                                 <button @click="isShowingSeven ^= true">7 Organisation et contenu de la formation</button>
                               </div>
@@ -94,7 +94,7 @@
                                 <p>Le Seshw Nsw (doctorat) est délivré à l’issue de la présentation de la thèse de fin d’études. Le cycle 2 est sanctionné par le titre de Sesh Nsw (Docteur).</p>
                               </div>
                     </div>
-                    <div class="proj__frame">
+                    <div class="proj__card__show__frame">
                               <div>
                                 <button @click="isShowingHeigth ^= true">8 Programme</button>
                               </div>
@@ -176,7 +176,7 @@
                                 </table>
                               </div>
                     </div> 
-                    <div class="proj__frame">
+                    <div class="proj__card__show__frame">
                               <div>
                                   <button @click="isShowingNine ^= true">9 Autres activités académiques</button>
                               </div>
@@ -190,7 +190,7 @@
                                     <p>La plupart des mémoires feront entre 175 et 225 pages. Toutes les thèses retenues seront publiées par l’IKCAD.</p>
                               </div>
                     </div>
-                    <div class="proj__frame">
+                    <div class="proj__card__show__frame">
                                     <div>
                                         <button @click="isShowingTen ^= true">10 Déroulement des cours</button>
                                     </div>
@@ -198,7 +198,7 @@
                                       <p>Chaque séance de cours sera d’une durée 2 heures. Les étudiants inscrits prendront 3 cours par semestre. En d’autres termes ceci équivaut à un volume horaire de 72 heures d’enseignement par semestre. La période entre les deux semestres est réservée aux travaux personnels, conférences et autres activités académiques.</p>
                                     </div>
                     </div>
-                    <div class="proj__frame">
+                    <div class="proj__card__show__frame">
                                     <div>
                                       <button @click="isShowingEleven ^= true">11 Les formalités d’admissions aux cycles du programme</button>
                                     </div>
@@ -210,7 +210,7 @@
                                       <p>Tous les renseignements sur l’inscription peuvent être obtenus auprès du coordinateur de l’IKCAD ou de son secrétariat.</p>
                                     </div>
                     </div>
-                    <div class="proj__frame">
+                    <div class="proj__card__show__frame">
                                     <div>
                                       <button @click="isShowingTwelve ^= true">12 Le planning</button>
                                     </div>
@@ -225,7 +225,7 @@
         <div class="proj__card">
                  <div class="proj__card__title"  @click="isShowingFinale ^= true">Inscription</div>
                  <div class="proj__card__show"  v-show="isShowingFinale">
-                    <div class="proj__frame">Fiche d'inscription.</div>
+                    <div class="proj__card__show__frame">Fiche d'inscription.</div>
                  </div>
           </div>
      </div>
