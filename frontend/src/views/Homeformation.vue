@@ -1,7 +1,7 @@
 <template>
   <div class="row select ">
      <div>
-       <a class="col-sm-3 select__nav" href="/#/formation-diplomante">Formation diplomante</a>
+       <a class="col-sm-3 select__nav" href="/#/page-formation">Formation diplomante</a>
 
        <a class="col-sm-3 select__nav" href="/Singnup#/signup">Formation certifiante</a>
 
