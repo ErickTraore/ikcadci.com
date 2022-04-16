@@ -10,16 +10,19 @@
 .proj {
     width: 100%;
     height: auto;
+    padding: 2rem 1rem 2em 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    background-color: white;
     &__card {
         margin: auto;
         width: auto;
         height: auto;
         padding: 10px;
-        border: solid white 20px;
-        background-color: rgb(142, 137, 137);
+        border: solid rgba(255, 255, 255, 0.724) 20px;
+        border-radius: 40px;
+        background-color: rgb(233, 231, 231);
         text-align: center;
         display: flex;
         flex-wrap: nowrap;
@@ -35,7 +38,7 @@
             font-weight: bolder;
             align-content: center;
             margin: auto;
-            transform: scale(1);
+            padding: 6px;
             &:hover {
                 background-color: #b64e4e;
                 transform: scale(1.15);
@@ -43,7 +46,6 @@
         }
         &__show {
             height: auto;
-            margin: 50px 0px 0px 0px;
             &__frame {
                 width: 100%;
                 padding: 0.5rem;
@@ -51,6 +53,50 @@
                 flex-wrap: wrap;
                 background-color: white;
                 color: blue;
+                margin: 10px 0px 0px 0px;
+                &__show {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    font-size: .9rem;
+                    font-weight: bolder;
+                    align-items: center;
+                    margin: auto 0.8rem;
+                }
+            }
+            &__cercle {
+                margin: 3px 0px 0px 0px;
+                border: solid 3px rgb(233, 229, 229);
+                background: $colour-primary;
+                justify-content: center;
+                width: 18px;
+                height: 18px;
+                color: white;
+                display: table;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                display: table-cell;
+                vertical-align: middle;
+                font-size: 0.8rem;
+                z-index: 1;
+            }
+            &__title {
+                margin: 0px 10px 0px -6px;
+                padding: 3px 6px 3px 6px;
+                width: auto;
+                height: auto;
+                display: flex;
+                flex-wrap: nowrap;
+                font-size: .9rem;
+                font-weight: bolder;
+                align-items: center;
+                border-radius: 10%;
+                border: solid 3px rgb(233, 229, 229);
+                position: inherit;
             }
         }
     }

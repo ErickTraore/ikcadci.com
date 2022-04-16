@@ -8,9 +8,10 @@
                   </div>
                 <div class="proj__card__show" v-show="isShowingGle"> 
                     <div class="proj__card__show__frame">
-                            <div>
-                                <button @click="isShowingOne ^= true">1  Motivation et finalité</button>
-                            </div>
+                    <div class="proj__card__show__cercle">1</div>
+                    <div class="proj__card__show__title"  @click="isShowingOne ^= true">
+                                 Motivation et finalité
+                                </div>
                             <div v-show="isShowingOne">
                                 <p>L’Institut Kemetmaat Cheikh Anta Diop est un département de l’Association Kemetmaat ouvert depuis 2012. L’association est affiliée à l’organisation communautaire Afrocentricity International ; laquelle est présente dans une cinquantaine de pays du continent et de la diaspora.</p>
                                 <p>Dans le cadre du courant de la renaissance africaine qui monte en puissance, l’IKCAD s’est donné pour vocation de former les futurs cadres et acteurs de cette révolution culturelle.
@@ -25,18 +26,20 @@
                                 <p>La création de ce programme est une expression concrète de la volonté des africains conscients de s’affranchir du carcan institutionnel de l’eurocentrisme et de créer un cadre afrocentrique d’enseignement et de recherche supérieur. Il s’agit de rompre avec toutes les formes de tutelles intellectuelles et académiques étrangères héritées de la période des déportations et de la colonisation et d’affirmer la présence et la vitalité de la pensée, des sciences, des techniques et des arts négro-africains (kamit) dans le monde d’aujourd’hui. Les diplômes de l’IKCAD sont donc des diplômes libres.</p>
                             </div>
                     </div>
+                    <div class="proj__card__show" v-show="isShowingGle"> 
                     <div class="proj__card__show__frame">
-                            <div>
-                             <button @click="isShowingTwo ^= true">2 Finalité</button>
+                    <div class="proj__card__show__cercle">2</div>
+                    <div class="proj__card__show__title"  @click="isShowingTwo ^= true"> Finalité </div>
                             </div>
                             <div v-show="isShowingTwo">
                                 <p>Il s’agit techniquement de doter l’étudiant d’un important bagage intellectuel par une formation de base pluridisciplinaire qui associe principalement les domaines des langues, de l’histoire, des lettres, de la philosophie, de la cosmologie, de la sociologie, de l’art dans un paradigme autoréférencé africain.</p>
                                 <p>Grace à l’étude de ces grandes disciplines dans une approche afrocentrique, l’apprenant acquiert de solides méthodes de travail, une grande culture générale, une claire conscience historique, un amour pour le service à l’Afrique, un grand sens critique et un sens créatif très important.</p>
                             </div>
                     </div>
+                   <div class="proj__card__show" v-show="isShowingGle"> 
                     <div class="proj__card__show__frame">
-                            <div>
-                                <button @click="isShowingTree ^= true">3 Public cible</button>
+                    <div class="proj__card__show__cercle">3</div>
+                    <div class="proj__card__show__title"  @click="isShowingTree ^= true"> Public cible</div>
                             </div>
                             <div v-show="isShowingTree">
                                 <p>Le programme s’adresse, en formation initiale, à des étudiants de niveau licence du système officiel d’enseignement désireux d’acquérir une spécialité professionnelle ou recherche dans une perspective afrocentrique.</p>
@@ -44,9 +47,10 @@
                                 <p>En formation continue, le programme de kamitologie offre l’opportunité à des professionnels et à des chercheurs de se reconvertir dans la nouvelle économie de la renaissance africaine.</p>
                             </div>
                     </div>
+                   <div class="proj__card__show" v-show="isShowingGle"> 
                     <div class="proj__card__show__frame">
-                            <div>
-                                <button @click="isShowingFor ^= true">4 Les diplômes et perspective d’emploie</button>
+                    <div class="proj__card__show__cercle">4</div>
+                    <div class="proj__card__show__title"  @click="isShowingFor ^= true">Les diplômes et perspective d’emploie</div>
                             </div>
                             <div v-show="isShowingFor">
                                 <p>Dans quelques années l’Afrique sera la première puissance démographique mondiale. Cette montée en puissance s’accompagnera d’une montée de la conscience positive de l’Afrique. Ce phénomène déjà palpable suscitera des demandes qu’il faut pouvoir anticiper et auxquelles on doit se préparer à répondre. Par exemple dans le domaine éducatif il faudra des enseignants équipés de solides connaissances de l’histoire et de la culture et des langues de notre continent. Tous les domaines de l’existence sont concernés ; la politique, l’économie, l’architecture, les arts créatifs etc. Les débouchés des formations de l’IKCAD sont celles offertes par ces prometteuses perspectives.</p>
@@ -55,9 +59,10 @@
                                     Les débouchés sont fonctions des spécialités du Seshsw et du Seshw Nsw : créateurs d’écoles afrocentriques, enseignants et formateurs, formateurs de formateurs, Ingénieur de formation, responsable du dispositif de formation, créateurs d’entreprises ou d’activités économiques afrocentrées, leaders d’associations civiles ou politiques, philosophes, théologien kamit, chercheur en afrologie, historien de l’art, historien, conférencier, communication, sociologue, journaliste, géostratège, consultant et conseillé specialisé.</p>
                             </div>
                     </div>
+                    <div class="proj__card__show" v-show="isShowingGle"> 
                     <div class="proj__card__show__frame">
-                            <div>
-                                <button @click="isShowingFive ^= true">5 Le dispositif de formation ouverte à distance</button>
+                    <div class="proj__card__show__cercle">5</div>
+                    <div class="proj__card__show__title"  @click="isShowingFive ^= true"> Le dispositif de formation ouverte à distance</div>
                             </div>
                             <div v-show="isShowingFive">
                                 <p>Les cours sont proposés sur un format en ligne strict. Toutes les conférences sont électroniques et sont accessibles par ordinateur.</p>
@@ -69,9 +74,10 @@
                                 <p>Les cours exigent une lecture intensive et les étudiants doivent être prêts à écrire ou à discuter après avoir lu les textes requis. Les enseignants attribueront normalement des lectures et celles-ci seront discutées, débattues, critiquées de manière constructive et évaluées dans le contexte afrocentrique.</p>
                             </div>
                     </div> 
+               <div class="proj__card__show" v-show="isShowingGle"> 
                     <div class="proj__card__show__frame">
-                            <div>
-                            <button @click="isShowingSix ^= true">6 La direction du programme</button>
+                    <div class="proj__card__show__cercle">6</div>
+                    <div class="proj__card__show__title" @click="isShowingSix ^= true"> La direction du programme</div>
                             </div>
                             <div v-show="isShowingSix">
                                 <p>Le programme d’études supérieures en études africaines Seshw et Seshw Nsw est dirigé par le professeur Ama Mazama ; « Imy r Sebayt » (directrice de l’enseignement) à l’IKCAD. A ce titre elle siège à tous les comités de thèse de l’IKCAD.</p>
@@ -80,9 +86,10 @@
                                 <p>L’Imy r Sebayt conduit une équipe d’enseignants et de chercheurs tous compétents en kamitologie dans leur spécialité respective.</p>
                             </div>
                     </div>
+                <div class="proj__card__show" v-show="isShowingGle"> 
                     <div class="proj__card__show__frame">
-                              <div>
-                                <button @click="isShowingSeven ^= true">7 Organisation et contenu de la formation</button>
+                    <div class="proj__card__show__cercle">7</div>
+                    <div class="proj__card__show__title"  @click="isShowingSeven ^= true"> Organisation et contenu de la formation</div>
                               </div>
                               <div v-show="isShowingSeven">
                                 <p>Le programme se déroule sur 8 semestres répartis en deux cycles. Chaque fin de cycle est sanctionnée parun diplôme.</p>
@@ -94,9 +101,10 @@
                                 <p>Le Seshw Nsw (doctorat) est délivré à l’issue de la présentation de la thèse de fin d’études. Le cycle 2 est sanctionné par le titre de Sesh Nsw (Docteur).</p>
                               </div>
                     </div>
+                  <div class="proj__card__show" v-show="isShowingGle"> 
                     <div class="proj__card__show__frame">
-                              <div>
-                                <button @click="isShowingHeigth ^= true">8 Programme</button>
+                    <div class="proj__card__show__cercle">8</div>
+                    <div class="proj__card__show__title"  @click="isShowingHeigth ^= true"> Programme</div>
                               </div>
                               <div v-show="isShowingHeigth">
                                 <p>PROGRAMME DE SESH NSW (DOCTORAT) EN KAMITOLOGIE 2022-2025</p>
@@ -176,9 +184,10 @@
                                 </table>
                               </div>
                     </div> 
+                   <div class="proj__card__show" v-show="isShowingGle"> 
                     <div class="proj__card__show__frame">
-                              <div>
-                                  <button @click="isShowingNine ^= true">9 Autres activités académiques</button>
+                    <div class="proj__card__show__cercle">9</div>
+                    <div class="proj__card__show__title"  @click="isShowingNine ^= true"> Autres activités académiques</div>
                               </div>
                               <div v-show="isShowingNine">
                                     <p>Conférence annuelle.</p>
@@ -190,17 +199,19 @@
                                     <p>La plupart des mémoires feront entre 175 et 225 pages. Toutes les thèses retenues seront publiées par l’IKCAD.</p>
                               </div>
                     </div>
+          <div class="proj__card__show" v-show="isShowingGle"> 
                     <div class="proj__card__show__frame">
-                                    <div>
-                                        <button @click="isShowingTen ^= true">10 Déroulement des cours</button>
+                    <div class="proj__card__show__cercle">10</div>
+                    <div class="proj__card__show__title"  @click="isShowingTen ^= true"> Déroulement des cours</div>
                                     </div>
                                     <div v-show="isShowingTen">
                                       <p>Chaque séance de cours sera d’une durée 2 heures. Les étudiants inscrits prendront 3 cours par semestre. En d’autres termes ceci équivaut à un volume horaire de 72 heures d’enseignement par semestre. La période entre les deux semestres est réservée aux travaux personnels, conférences et autres activités académiques.</p>
                                     </div>
                     </div>
+                  <div class="proj__card__show" v-show="isShowingGle"> 
                     <div class="proj__card__show__frame">
-                                    <div>
-                                      <button @click="isShowingEleven ^= true">11 Les formalités d’admissions aux cycles du programme</button>
+                    <div class="proj__card__show__cercle">11</div>
+                    <div class="proj__card__show__title"  @click="isShowingEleven ^= true">11 Les formalités d’admissions aux cycles du programme</div>
                                     </div>
                                     <div v-show="isShowingEleven">
                                       <p>Les étudiants sont admis deux fois par an. La date limite de présentation des demandes pour le premier semestre 2022 est le 31 décembre 2021 pour une rentrée qui se fera fin janvier. La date limite de présentation des demandes pour le deuxième semestre 2022 est le 30 juin 2022 pour une rentrée qui se fera début Juillet 2022.</p>
@@ -210,9 +221,10 @@
                                       <p>Tous les renseignements sur l’inscription peuvent être obtenus auprès du coordinateur de l’IKCAD ou de son secrétariat.</p>
                                     </div>
                     </div>
+                    <div class="proj__card__show" v-show="isShowingGle"> 
                     <div class="proj__card__show__frame">
-                                    <div>
-                                      <button @click="isShowingTwelve ^= true">12 Le planning</button>
+                    <div class="proj__card__show__cercle">12</div>
+                    <div class="proj__card__show__title"  @click="isShowingTwelve ^= true"> Le planning</div>
                                     </div>
                                     <div v-show="isShowingTwelve">
                                       <p>Le planning du premier semestre 2022 est disponible auprès du secrétariat.</p>
