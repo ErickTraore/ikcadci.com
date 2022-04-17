@@ -28,7 +28,7 @@
         flex-wrap: nowrap;
         flex-direction: column;
         padding: 2rem;
-        &__title {
+        &__firstTitle {
             width: 200px;
             height: auto;
             background-color: rgb(233, 229, 229);
@@ -54,24 +54,13 @@
                 background-color: white;
                 color: blue;
                 margin: 10px 0px 0px 0px;
-                &__show {
-                    width: 100%;
-                    height: auto;
-                    display: flex;
-                    flex-wrap: nowrap;
-                    font-size: .9rem;
-                    font-weight: bolder;
-                    align-items: center;
-                    margin: auto 0.8rem;
-                }
             }
             &__cercle {
                 margin: 3px 0px 0px 0px;
                 border: solid 3px rgb(233, 229, 229);
-                background: $colour-primary;
-                justify-content: center;
-                width: 18px;
-                height: 18px;
+                background: rgb(139, 132, 132);
+                width: 30px;
+                height: 20px;
                 color: white;
                 display: table;
                 border-radius: 50%;
@@ -81,22 +70,35 @@
                 -o-border-radius: 50%;
                 display: table-cell;
                 vertical-align: middle;
-                font-size: 0.8rem;
+                font-size: 1rem;
                 z-index: 1;
             }
             &__title {
                 margin: 0px 10px 0px -6px;
                 padding: 3px 6px 3px 6px;
                 width: auto;
-                height: auto;
+                height: 30px;
                 display: flex;
-                flex-wrap: nowrap;
-                font-size: .9rem;
+                flex-wrap: wrap;
+                font-size: 1.2rem;
                 font-weight: bolder;
                 align-items: center;
                 border-radius: 10%;
                 border: solid 3px rgb(233, 229, 229);
                 position: inherit;
+            }
+            &__content p {
+                // margin: 0px 10px 0px 0px;
+                // padding: 3px 6px 3px 6px;
+                width: auto;
+                height: auto;
+                text-align: left;
+                font-family: "Montserrat", sans-serif;
+                font-weight: 400;
+                font-size: 14px;
+                background-color: white;
+                position: abs($number: 0);
+                color: black;
             }
         }
     }
@@ -107,8 +109,29 @@ table {
     /* Les bordures du tableau seront collées (plus joli) */
 }
 
-td,
+td {
+    margin: 0px 10px 0px -6px;
+    padding: 3px 6px 3px 6px;
+    border: 1px solid black;
+}
+
 th,
 tr {
     border: 1px solid black;
+}
+
+.semestrePaire {
+    background-color: rgb(211, 207, 202);
+}
+
+.semestre {
+    background-color: rgb(190, 186, 181);
+}
+
+.titrePaire {
+    background-color: rgb(233, 231, 231);
+}
+
+.titre {
+    background-color: rgb(211, 207, 202);
 }
