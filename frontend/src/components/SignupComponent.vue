@@ -38,12 +38,12 @@
                     >
                 </p>
                 <p>
-                    <label for="bio">Biographie </label>
+                    <label for="biographie">Biographie </label>
                     <input
-                            id="bio"
-                            v-model="user.bio"
+                            id="biographie"
+                            v-model="user.biographie"
                             type="text"
-                            name="bio"
+                            name="biographie"
                     >
                 </p>
                 <button class="btn"> S'inscrire</button>
@@ -72,7 +72,7 @@
         testEmail: true,
         user: {
           username: null,
-          bio: null,
+          biographie: null,
           email: null,
           password: null,
         }
@@ -114,7 +114,7 @@
               })
           .catch((error) => {
             console.log(error)
-            this.errors.push('L\'adresse email existe déjà.');
+            // this.errors.push('L\'adresse email existe déjà.');
             this.$router.push({path: '/signup'})
             })
       },

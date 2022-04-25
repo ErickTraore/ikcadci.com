@@ -134,6 +134,12 @@ const routes = [{
         name: 'Page-formation',
         component: () =>
             import ( /* webpackChunkName: "page-formation.vue" */ '../views/Page-formation.vue')
+    },
+    {
+        path: '/pageInscription',
+        name: 'PageInscription',
+        component: () =>
+            import ( /* webpackChunkName: "pageInscription.vue" */ '../views/PageInscription.vue')
     }
 ]
 
