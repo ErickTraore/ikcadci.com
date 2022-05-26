@@ -1,16 +1,19 @@
 <template>
     <div class='thing'>
         <div id="app" class='thing__header'>
-                <div class='thing__header__body'>
+            <div class='thing__header__body__maj'>
+                <!-- <div class='thing__header__body'> -->
                     <div class='thing__header__body__title'> Mon profil</div>
-                </div>
+                <!-- </div> -->
                 <div class='thing__header__body__content'>
                     <div class='thing__header__body__content__saveOne'>Nom:</div>
-                    <div class='thing__header__body__content__saveTwo'>{{ profile.username }}</div>
+                    <div class='thing__header__body__content__saveTwo' v-show="posts.username">
+                    {{ profile.username }}
+                    </div>
                 </div>
                 <div class='thing__header__body__content'>
                     <div class='thing__header__body__content__saveOne'>Prenom:</div>
-                    <div class='thing__header__body__content__saveTwo'> {{ profile.lastname }}</div>
+                    <div class='thing__header__body__content__saveTwo' v-show='posts.lastname'> {{ profile.lastname }}</div>
                 </div>
                 <div class='thing__header__body__content'>
                     <div class='thing__header__body__content__saveOne'>Email: </div>
@@ -65,13 +68,18 @@
                     <div class='thing__header__body__content__saveOne'>tel3:</div>
                     <div class='thing__header__body__content__saveTwo'>  {{ profile.tel3}}</div>
                 </div>
-            <!-- <div>picked: {{ profile.picked}}</div> -->
-            <div>Formation selectionnée seshsw: {{ profile.seshsw}}</div>
-            <div>Formation selectionnée seba: {{ profile.seba}}</div>
-
+                 <div class='thing__header__body__content'>
+                <div class='thing__header__body__content__saveOne'>Profession<sup>*</sup>:</div>
+                <div class='thing__header__body__content__saveTwo'> {{ profile.profession }}</div>
+                </div>
+                <div class='thing__header__body__content'>
+                    <div class='thing__header__body__content__saveOne'>Activite:</div>
+                    <div class='thing__header__body__content__saveTwo'> {{ profile.activite }}</div>
+                </div>
+            </div>
 
             <form @submit="postData" method="post">
-                <div class='thing__header__body__maj'>
+                <div class='thing__header__body__maj--background'>
                     <!-- item 1 -->
                     <!-- item 2 -->
                     <div class='thing__header__body__maj__title'>
@@ -91,7 +99,7 @@
                     </div>
                     <!-- item 3 -->
                     <div class='thing__header__body'>
-                            <label>Mettre à jour mon nom Traditionel</label>
+                            <label>Nom Traditionel</label>
                             <textarea
                                     id="usernameTradition"
                                     name="usernameTradition"
@@ -103,7 +111,7 @@
                     </div>
                     <!-- item 4 -->
                     <div class='thing__header__body'>
-                            <label>Mettre à jour mon prenom-traditionel</label>
+                            <label>Prénom-traditionel</label>
                             <textarea
                                     id="lastnameTradition"
                                     name="lastnameTradition"
@@ -115,11 +123,11 @@
                         </div>
                     <!-- item 5 -->
                     <div class='thing__header__body'>
-                            <label>Mettre à jour ma date de naissance</label> 
+                            <label>Date de naissance</label> 
                             <textarea
                                     id="dateBirthday"
                                     name="dateBirthday"
-                                    placeholder="Date de naissance"
+                                    placeholder="jour/mois/année"
                                     type="text"
                                     v-model="posts.dateBirthday"
                             ></textarea>
@@ -127,7 +135,7 @@
                         </div>
                   <!-- item 6 -->
                     <div class='thing__header__body'>
-                            <label>Mettre à jour ma ville de naissance</label>
+                            <label>Ville de naissance</label>
                             <textarea
                                     id="townBirthday"
                                     name="townBirthday"
@@ -139,7 +147,7 @@
                         </div>
                   <!-- item 7 -->
                     <div class='thing__header__body'>
-                          <label>Mettre à jour mon sexe</label>
+                          <label>Civilité</label>
                             <input 
                           type="radio" 
                           id="homme" 
@@ -156,7 +164,7 @@
                         </div>
                   <!-- item 8 -->
                     <div class='thing__header__body'>
-                            <label>Mettre à jour ma nationalité</label> 
+                            <label>Nationalité</label> 
                             <textarea
                                     id="nationalite"
                                     name="nationalite"
@@ -168,7 +176,7 @@
                         </div>
                   <!-- item 9 -->
                     <div class='thing__header__body'>
-                            <label>Mettre à jour mon adresse postale de résidence</label>
+                            <label>Adresse postale de résidence</label>
                             <textarea
                                     id="adresseResid"
                                     name="adresseResid"
@@ -180,7 +188,7 @@
                         </div>
                   <!-- item 10 -->
                     <div class='thing__header__body'>
-                            <label>Mettre à jour ma ville de résidence</label>
+                            <label>Ville de résidence</label>
                             <textarea
                                     id="villeResid"
                                     name="villeResid"
@@ -192,7 +200,7 @@
                         </div>
                   <!-- item 11 -->
                     <div class='thing__header__body'>
-                            <label>Mettre à jour mon pays de résidence</label>
+                            <label>Pays de résidence</label>
                             <textarea
                                     id="paysResid"
                                     name="paysResid"
@@ -204,7 +212,7 @@
                         </div>
                   <!-- item 12 -->
                     <div class='thing__header__body'>
-                            <label>Mettre à jour mon n° de telephone</label>
+                            <label>Telephone</label>
                             <textarea
                                     id="tel1"
                                     name="tel1"
@@ -216,7 +224,7 @@
                         </div>
                   <!-- item 13 -->
                     <div class='thing__header__body'>
-                            <label>Inserez <span>obligatoirement un n° de  tel wats'app</span></label> 
+                            <label>Inserez <span> N° de  tel wats'app</span></label> 
                             <textarea
                                     id="tel2"
                                     name="tel2"
@@ -228,7 +236,7 @@
                         </div>
                   <!-- item 14 -->
                     <div class='thing__header__body'>
-                            <label>Inserez un 3eme n° facultatif</label>
+                            <label>Inserez un 3eme N°(facultatif)</label>
                             <textarea
                                     id="tel3"
                                     name="tel3"
@@ -238,80 +246,39 @@
                             ></textarea>
                             <button type="submit">Soumettre</button>
                     </div>
-                              <!-- item 7 -->
+                  <!-- item 15 -->
                     <div class='thing__header__body'>
-                          <label>Sélection de ma formation</label>
-                            <input 
-                          type="radio" 
-                          id="seshsw-s1" 
-                          value="seshsw-s1" 
-                          v-model="posts.seshsw">
-                          <label for="seshsw-s1">seshsw-semestre-1</label>
-                          <input 
-                          type="radio" 
-                          id="seshsw-s2" 
-                          value="seshsw-s2" 
-                          v-model="posts.seshsw">
-                          <label for="seshsw-s2">seshsw-semestre-2</label>
-                            <input 
-                          type="radio" 
-                          id="seshsw-s3" 
-                          value="seshsw-s3" 
-                          v-model="posts.seshsw">
-                          <label for="seshsw-s3">seshsw-semestre-3</label>  
-                          <input 
-                          type="radio" 
-                          id="seshsw-s4" 
-                          value="seshsw-s4" 
-                          v-model="posts.seshsw">
-                          <label for="seshsw-s4">seshsw-semestre-4</label>
+                            <label>Profession)</label>
+                            <textarea
+                                    id="profession"
+                                    name="profession"
+                                    placeholder="profession"
+                                    type="text"
+                                    v-model="posts.profession"
+                            ></textarea>
                             <button type="submit">Soumettre</button>
                     </div>
+                  <!-- item 16 -->
                     <div class='thing__header__body'>
-                                  <input 
-                                    type="checkbox" 
-                                    id="KMT-7007" 
-                                    value="KMT-7007" 
-                                    v-model="checkedFormations"
-                                  >
-                                    <label for="KMT-7007">KMT-7007</label>
-                                  <input 
-                                    type="checkbox" 
-                                    id="KMT-7017" 
-                                    value="KMT-7017" 
-                                    v-model="checkedFormations"
-                                  >
-                                    <label for="KMT-7017">KMT-7017</label>
-                                  <input 
-                                    type="checkbox" 
-                                    id="KMT-7027" 
-                                    value="KMT-7027" 
-                                    v-model="checkedFormations"
-                                  >
-                                  <label for="KMT-7027">KMT-7027</label>
-                                  <button type="submit">Soumettre</button>
-                                  <span>votre selection: {{ checkedFormations }}</span>
-                            <div class="hello">
-                              <textarea v-model="checkedFormations" placeholder="Please add"></textarea>
+                            <label>Activite</label>
+                            <textarea
+                                    id="activite"
+                                    name="activite"
+                                    placeholder="activite"
+                                    type="text"
+                                    v-model="posts.activite"
+                            ></textarea>
                             <button type="submit">Soumettre</button>
-                            </div>
-
-
-                            <div>
-                              <p>{{posts.seba}}</p>
-                              <button @click="myFunction()">Click Me</button>
-                            </div>
                     </div>
-                </div>
+              </div>
           </form>
         </div>
-    </div>
+             </div>
+
 </template>
 
 <script>
   import axios from 'axios';
-// import { mapState } from 'vuex';
-
   export default {
     data: function() {
       return {
@@ -338,7 +305,9 @@
           tel3: '',
           picked: '',
           seshsw: '',
-          seba: ''
+          seba: '',
+          profession: '',
+          activite: '',
           }
       }
     },
@@ -364,8 +333,7 @@
     },
     methods: {
       myFunction: function () {	
-        this.posts.seba = JSON.stringify(this.checkedFormations);
-        // this.myStr = JSON.stringify(this.checkedFormations);
+        this.posts.seba = JSON.stringify(this.checkedFormations)
         },
       postData(e) {
         let objMySession = localStorage.getItem("obj")
@@ -395,6 +363,8 @@
             this.profile.picked= response.data.picked
             this.profile.seshsw= response.data.seshsw
             this.profile.seba= response.data.seba
+            this.profile.profession= response.data.profession
+            this.profile.activite= response.data.activite
           })
           .catch(error => console.log(error()))
 

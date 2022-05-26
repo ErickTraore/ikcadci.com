@@ -1,0 +1,25 @@
+.formation {
+    width: auto;
+    display: flex;
+    padding: 1rem 1rem;
+    border-radius: 2rem;
+    justify-content: space-evenly;
+    background-color: #bdbab3;
+    border: solid 5px rgb(231, 233, 237);
+    margin-bottom: 20px;
+    &__div {
+        width: auto;
+        height: auto;
+        font-size: 1.2rem;
+        align-items: center;
+        padding: 1rem 1rem;
+        margin: 1rem 1rem;
+        border-radius: 2rem;
+        background-color: white;
+        border: solid 3px rgb(161, 163, 167);
+        &:hover {
+            color: white;
+            background-color: brown;
+        }
+    }
+}

@@ -1,6 +1,5 @@
 <template>
     <div id="app">
-
       <div id="container" class="projPrev"> 
               <div class="projPrev__groupo rotateLogo">
                   <img  alt="Logo-groupomania" src="./assets/plus/masque_kemet.png" class="projPrev__groupo__masq"> 
@@ -20,23 +19,23 @@
               <router-link class="nav-link" to="/">Messagerie</router-link> 
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/profile">Profile</router-link>  
-            </li>
-              <li class="nav-item">
-              <router-link class="nav-link" to="/homeformation">Home-formations</router-link>  
+              <router-link class="nav-link" to="/page-profil">Profil</router-link>  
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" v-if=logged to="/login">Login</router-link>  
-              <router-link class="nav-link" v-else  to="/logout">Logout</router-link> 
+              <router-link class="nav-link" to="/home-formation">Formations</router-link>  
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" v-if= testBool  to="/compte">Admin-users</router-link> 
+              <router-link class="nav-link" to="/stepper">Inscription</router-link>  
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" v-if= testBool  to="/comptemessages">Admin-messages</router-link> 
+              <router-link class="nav-link" to="/maClass">Classe</router-link>  
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" v-if= testBool  to="/formation">Admin-formations</router-link> 
+              <router-link class="nav-link" v-if=logged to="/login">  <span class="fa fa-user "></span> Connexion</router-link>  
+              <router-link class="nav-link" v-else  to="/logout">Déconnexion</router-link> 
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" v-if= testBool  to="/pageAdmin">Page administrateur</router-link> 
             </li>
           </ul>
           <form class="d-flex">
@@ -48,7 +47,6 @@
     </nav>
       <router-view/>
     </div>
-
 </template>
 
 <script>
@@ -75,7 +73,6 @@ export default {
      if(objMySession){
           let myStorageToken = JSON.parse(objMySession)
           let token = myStorageToken.myToken;
-          
           axios
           .get('https://212.227.142.69:3000/api/users/me/',{
                   headers: {
@@ -86,22 +83,19 @@ export default {
                 this.item = response.data
                 })
               .catch(error => console.log(error()))
+
         }
   },
-
   props: {},
   methods: {
   },
 };
 </script>
 <style lang="scss">
-    @import 'sass/main.scss';
-
-
+    @import './sass/main.scss';
 navbar-toggler-icon{
   color:black;
 }
-
 </style>
 
 

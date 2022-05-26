@@ -1,0 +1,132 @@
+.admin {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    &__nav {
+        width: auto;
+        font-size: 1.2rem;
+        align-items: center;
+        padding: 1rem;
+        border-radius: 2rem;
+        border: solid 3px rgb(161, 163, 167);
+        background-color: antiquewhite;
+    }
+    &__navette {
+        width: auto;
+        font-size: 1.2rem;
+        align-items: center;
+        padding: 1rem;
+        border: solid 3px rgb(161, 163, 167);
+        background-color: antiquewhite;
+    }
+    &__inscrit {
+        width: 100%;
+        height: auto;
+        font-size: 1.2rem;
+        align-items: center;
+        padding: 1rem;
+        border: solid 3px rgb(161, 163, 167);
+        background-color: antiquewhite;
+        display: flex;
+        flex-direction: column;
+        &__title {
+            width: auto;
+            height: auto;
+            margin: 0px auto;
+        }
+        &__content {
+            width: 100%;
+            height: auto;
+            display: flex;
+            background-color: white;
+            border: solid 1px blue;
+            margin-bottom: 10px;
+            &__div1 {
+                width: 80%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                border: solid 1px blue;
+                &__case1 {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    first-child {
+                        background-color: yellow;
+                    }
+                    &__box1 {
+                        width: 50%;
+                        height: auto;
+                    }
+                    &__box2 {
+                        width: 50%;
+                        height: auto;
+                    }
+                }
+                &__case2 {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: row;
+                    &__box1 {
+                        width: 50%;
+                        height: auto;
+                    }
+                    &__box2 {
+                        width: 50%;
+                        height: auto;
+                    }
+                }
+                &__case3 {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    &__box1 {
+                        width: 50%;
+                        height: auto;
+                        background-color: rgb(225, 215, 215);
+                    }
+                    &__box2 {
+                        width: 50%;
+                        height: auto;
+                        background-color: greenyellow;
+                    }
+                }
+            }
+            &__div2 {
+                width: 15%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                border: solid 1px blue;
+                button {
+                    width: 100%;
+                    height: auto;
+                }
+                &__accepter {
+                    width: 100%;
+                    height: auto;
+                    background-color: greenyellow;
+                }
+                &__attente {
+                    width: 100%;
+                    height: auto;
+                    background-color: orange;
+                }
+                &__refuser {
+                    width: 100%;
+                    height: auto;
+                    background-color: rgb(201, 101, 101);
+                }
+                &__supprimer {
+                    width: 100%;
+                    height: auto;
+                    color: red;
+                    background-color: white;
+                    border: solid 1px red;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+}
+
+.p {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    &__Form {
+        min-width: 400px;
+        max-width: 1200px;
+        width: 100%;
+        height: auto;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 2rem;
+        border: solid 1px #97abd3;
+        &__head {
+            width: 100%;
+            height: auto;
+            display: flex;
+            border: solid 1px #d0d1d3;
+            flex-direction: row;
+            &__img {
+                width: 100px;
+                height: auto;
+                display: flex;
+                margin: auto;
+                padding: auto;
+            }
+            &__title {
+                // width: 660px;
+                width: auto;
+                height: auto;
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                margin: auto;
+                font-size: large;
+            }
+        }
+        &__header {
+            width: 100%;
+            height: auto;
+            display: flex;
+            border: solid 3px #d0d1d3;
+            flex-direction: row;
+            margin-bottom: 20px;
+        }
+        &__articleun {
+            width: 50%;
+            height: auto;
+            margin: auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            border-radius: 2rem;
+            border: solid 3px #1a1db8;
+            font-size: large;
+        }
+        &__articledeux {
+            width: 100%;
+            height: auto;
+            margin: auto;
+            padding: 2rem 2rem;
+            display: flex;
+            justify-content: center;
+            background-color: rgba(248, 247, 247, .801);
+            border: solid 3px #d0d1d3;
+            margin-top: 20px;
+        }
+        &__block {
+            width: 100%;
+            height: auto;
+            &__titre {
+                width: 100%;
+                height: auto;
+                display: flex;
+                align-content: space-between;
+                font-size: larger;
+                border: solid 3px #d0d1d3;
+                background-color: #d0d1d3;
+            }
+            &__view {
+                width: 100%;
+                height: auto;
+                // border: solid 3px red;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                &--bis {
+                    background-color: #a7e6d1;
+                }
+                &__content {
+                    width: 32%;
+                    height: auto;
+                    display: flex;
+                    border: solid 1px black;
+                    margin: 10px 10px;
+                    align-content: space-between;
+                    &__label {
+                        width: 45%;
+                        height: auto;
+                        background-color: rgba(248, 247, 247, .801);
+                        &--bis {
+                            background-color: #b9e7d8;
+                        }
+                    }
+                    &__input {
+                        width: auto;
+                        height: auto;
+                        &--bis {
+                            color: #1a1db8;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

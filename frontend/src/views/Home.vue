@@ -63,11 +63,11 @@
 
                 </div>
                  <ul>
-  </ul>
+                 </ul>
             </div>
 
         </div>
-            <div class='group__header__body'>
+      <div class='group__header__body'>
                 <form @submit="onPostData" method="post" enctype="multipart/form-data" name="message">
 
                     <label class="labelForm">Nouveau message avec image optionnelle</label> <br> <br>
@@ -91,22 +91,22 @@
                             type="text"
                             name="content"
                             placeholder="Contenu"
-                    > 
+                    >
                     <input
                             id="attachment"
                             v-model="message.attachment"
                             type="hidden"
                             name="attachment"
-                    > 
-                    <br> 
+                    >
+                    <br>
                           <div>
                             <div v-if="!image">
                             <h4>Choisir une image</h4>
                             <div id="list">
                             </div>
-                    <input 
-                            id="file" 
-                            type="file" 
+                    <input
+                            id="file"
+                            type="file"
                             @change="onFileSelected"
                             name="attachment"
                             alt="example"
@@ -162,7 +162,7 @@
     computed: {
       ...mapGetters(["imageExist"])
 ,    },
-   
+
     data() {
       return {
         // loading: false,
@@ -217,7 +217,7 @@
     }, 1000)
     },
   methods: {
-      resetForm() {
+    resetForm() {
         console.log('Reseting the form')
         var self = this; //you need this because *this* will refer to Object.keys below`
         //Iterate through each object field, key is name of the object field`
@@ -225,7 +225,7 @@
           self.message[key] = '';
         });
       },
-      doLike: function (id) {
+    doLike: function (id) {
         let objMySession = localStorage.getItem("obj")
         let myStorageToken = JSON.parse(objMySession)
         let token = myStorageToken.myToken;
@@ -244,7 +244,7 @@
           })
           .catch(error => console.log(error()))
       },
-      doDislike: function (id) {
+    doDislike: function (id) {
         let objMySession = localStorage.getItem("obj")
         let myStorageToken = JSON.parse(objMySession)
         let token = myStorageToken.myToken;
@@ -281,7 +281,7 @@
           return this.post(this.message);
         }
       },
-        post: function (message, e) {
+    post: function (message, e) {
         let objMySession = localStorage.getItem("obj")
         let myStorageToken = JSON.parse(objMySession)
         let token = myStorageToken.myToken;
@@ -420,8 +420,8 @@
         .catch(function(err) {
               err.statusCode = 401;
               });
-      }
-  }
+      },
+  },
   }
 </script>
 
@@ -488,9 +488,6 @@
   }
   .left{
         display: flex;
-
-        
-
   }
   .right{
 display: flex;

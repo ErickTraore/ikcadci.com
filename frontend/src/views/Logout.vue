@@ -2,7 +2,7 @@
   <div class="Logout">
       <div>Merci de votre visite
             <button @click="logoutClick"> Se Déconnecter </button> </div> <br> 
-       <div> Continuer votre visite  
+       <div> Continuer votre visite
             <button @click="continuerClick" >  Retour page d'accueille  </button> </div>
          <!-- <a href="/Singnup#/signup">page d'acceuil/a> -->
 
@@ -20,6 +20,7 @@ export default {
       logoutClick () {
         this.$store.dispatch('beforeLogged')
          window.localStorage.clear()
+          this.$router.push('/') 
          window.location.reload();
 
         //  <a href = "/login"> page d'acceuil </a> 

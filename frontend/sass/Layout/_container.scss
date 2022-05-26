@@ -3,6 +3,7 @@
     height: 100%;
     display: flex;
     justify-content: center;
+    border: solid 5px #e7e9ed;
 }
 
 .group {
@@ -13,8 +14,7 @@
     color: white;
     margin: 0px auto;
     &__header {
-        font-size: 1.2rem;
-        align-items: center;
+        width: 100%;
         color: white;
         padding: 1rem;
         border-radius: 2rem;

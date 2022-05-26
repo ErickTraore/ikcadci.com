@@ -114,6 +114,7 @@
               })
           .catch((error) => {
             console.log(error)
+            // demarrer le serveur obligatoirement avant cette ligne
             // this.errors.push('L\'adresse email existe déjà.');
             this.$router.push({path: '/signup'})
             })

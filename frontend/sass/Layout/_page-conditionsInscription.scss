@@ -1,0 +1,37 @@
+    .conditions {
+        width: 80%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin: 10px auto;
+        &__titleMain {
+            width: auto;
+            height: auto;
+            font-size: small;
+            text-align: center;
+            font-weight: 100;
+            background-color: #e7e9ed;
+            padding: 10px 10px;
+            margin: 30px;
+        }
+        &__title {
+            width: auto;
+            height: auto;
+            display: flex;
+            &__first {
+                width: auto;
+                height: auto;
+                display: flex;
+            }
+            &__content {
+                width: auto;
+                height: auto;
+                display: flex;
+            }
+        }
+    }
+    
+    span {
+        color: blue;
+        font-size: 20px;
+    }

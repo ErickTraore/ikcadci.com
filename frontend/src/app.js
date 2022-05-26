@@ -1,3 +1,5 @@
+var Vue = require('vue')
+
 import PulseLoader from './PulseLoader.vue'
 import GridLoader from './GridLoader.vue'
 import ClipLoader from './ClipLoader.vue'

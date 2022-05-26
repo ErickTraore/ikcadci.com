@@ -1,57 +1,102 @@
-    * {
-        box-sizing: border-box;
-    }
-    
-    .thing {
+* {
+    box-sizing: border-box;
+}
+
+.thing {
+    width: auto;
+    display: flex;
+    align-items: center;
+    border-radius: 2rem;
+    flex-direction: column;
+    margin: 0px auto;
+    border: solid 5px rgb(231, 233, 237);
+    &__header {
         width: auto;
-        display: flex;
+        font-size: 1.2rem;
         align-items: center;
+        padding: 1rem;
         border-radius: 2rem;
-        justify-content: space-evenly;
-        border: solid 5px rgb(231, 233, 237);
-        &__header {
+        border: solid 3px rgb(161, 163, 167);
+        &__body {
             width: auto;
-            font-size: 1.2rem;
-            align-items: center;
+            display: flex;
             padding: 1rem;
+            display: flex;
+            flex-direction: column;
             border-radius: 2rem;
-            border: solid 3px rgb(161, 163, 167);
-            &__body {
-                width: auto;
-                padding: 1rem;
+            margin: 0px auto;
+            background-color: #d0d1d3;
+            &--bis {
+                font-size: x-small;
+            }
+            button {
+                border-radius: 2rem;
+                color: red;
+                &:hover {
+                    background-color: rgb(133, 228, 177);
+                    transform: scale(0.95);
+                }
+            }
+            &__attention {
+                width: 80%;
+                height: auto;
+                display: flex;
+                text-align: left;
+                margin: auto;
+            }
+            span {
+                color: green;
+                font-size: x-small;
+            }
+            &__seba {
+                width: 100%;
+                height: auto;
+                padding: 7px;
                 display: flex;
                 flex-direction: column;
                 border-radius: 2rem;
                 margin-top: 1rem;
                 margin-bottom: 1rem;
-                background-color: #d0d1d3;
-                button {
+                background-color: #efefef;
+                border: solid 3px #7a8087;
+                &:hover {
+                    background-color: white;
+                    transform: scale(0.95);
+                }
+                &__box {
+                    width: 100%;
+                    height: 30px;
+                    margin: 0px 0px 0px;
+                    padding: 0px 0px 0px;
+                    display: flex;
+                    flex-direction: row;
                     border-radius: 2rem;
-                    color: red;
+                    input[type=checkbox] {
+                        margin: 0px 0px 0px;
+                        line-height: normal;
+                    }
+                    label {
+                        width: auto;
+                        display: flex;
+                        align-items: center;
+                        padding: 0px 0px 10px 0px;
+                        border-radius: 2rem;
+                        margin: auto;
+                    }
                 }
-                span {
-                    color: green;
-                }
-                &__maj {
-                    width: auto;
-                    height: auto;
+            }
+            &__maj {
+                width: auto;
+                height: auto;
+                margin: 1rem 1rem;
+                padding: 1rem 1rem;
+                border-radius: 2rem;
+                background-color: #aed1ea;
+                &--background {
                     margin: 1rem 1rem;
                     padding: 1rem 1rem;
                     border-radius: 2rem;
-                    background-color: #eb9e9e;
-                    &__title {
-                        padding: 15px;
-                        width: 160px;
-                        height: 15%;
-                        flex-direction: column;
-                        font-size: large;
-                        text-align: center;
-                        border-radius: 2rem;
-                        margin: auto;
-                        padding: auto;
-                        background-color: rgb(229, 229, 245);
-                        color: blue;
-                    }
+                    background-color: #cfb1b8;
                 }
                 &__title {
                     padding: 15px;
@@ -66,35 +111,52 @@
                     background-color: rgb(229, 229, 245);
                     color: blue;
                 }
-                &__content {
+            }
+            &__title {
+                padding: 15px;
+                width: 160px;
+                height: 15%;
+                flex-direction: column;
+                font-size: large;
+                text-align: center;
+                border-radius: 2rem;
+                margin: auto;
+                padding: auto;
+                background-color: rgb(229, 229, 245);
+            }
+            &__content {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                border-radius: 1rem;
+                justify-content: space-between;
+                background-color: white;
+                border: solid 1px white;
+                &__saveOne {
                     // padding: 15px;
-                    width: 100%;
+                    width: auto;
                     display: flex;
-                    flex-direction: row;
-                    border-radius: .5rem;
-                    justify-content: space-between;
-                    background-color: rgb(195, 195, 198);
-                    border: solid 5px white;
-                    &__saveOne {
-                        // padding: 15px;
-                        width: auto;
-                        display: flex;
-                        text-align: right;
-                        color: blue;
-                        margin-left: 1rem;
-                        padding: auto;
+                    text-align: right;
+                    margin-left: 1rem;
+                    padding: auto;
+                    sup {
+                        top: 0.5em;
+                        color: red;
                     }
-                    &__saveTwo {
-                        // padding: 15px;
-                        width: auto;
-                        display: flex;
-                        text-align: right;
-                        border-radius: 2rem;
-                        margin-right: 1rem;
-                        padding: auto;
-                        // background-color: rgb(229, 229, 245);
-                    }
+                }
+                &__saveTwo {
+                    // padding: 15px;
+                    width: auto;
+                    display: flex;
+                    text-align: center;
+                    border-radius: 2rem;
+                    margin-right: 1rem;
+                    padding: auto;
+                    background-color: rgb(229, 229, 245);
                 }
             }
         }
     }
+}

@@ -1,6 +1,6 @@
 <template>
         <div class='group__header'>
-          <div>CONEXION</div>
+          <div class="group__header__body__btn">{{  title }}</div>
             <form @submit="postData" method="post">
                 <div class='group__header__body '>
                     <p v-if="errors.length">
@@ -96,14 +96,11 @@
                     this.$store.dispatch("nowLogged");
                     this.$router.push({path: '/'});
                     window.location.reload();
-
                     })
-
           .catch((error) => {
             console.log(error)
             this.errors.push('Votre mot de passe est éronné.');
             this.$router.push({path: '/login'})
-
             })
              },
 

@@ -17,7 +17,7 @@ export default {
       type: Boolean,
       default: true
     },
-    color: { 
+    color: {
       type: String,
       default: '#5dc596'
     },
@@ -35,20 +35,20 @@ export default {
     }
   },
   data () {
-    return {
-      spinnerStyle: {
-      	backgroundColor: this.color,
-      	width: this.size,
-        height: this.size,
-      	margin: this.margin,
-      	borderRadius: this.radius,
-        display: 'inline-block',
-        animationName: 'v-pulseStretchDelay',
-        animationDuration: '0.75s',
-        animationIterationCount: 'infinite',
-        animationTimingFunction: 'cubic-bezier(.2,.68,.18,1.08)',
-        animationFillMode: 'both'
-      },
+      return {
+          spinnerStyle: {
+                backgroundColor:'color',
+                width: 'size',
+                height: 'size',
+                margin: 'margin',
+                borderRadius: 'radius',
+                display: 'inline-block',
+                animationName: 'v-pulseStretchDelay',
+                animationDuration: '0.75s',
+                animationIterationCount: 'infinite',
+                animationTimingFunction: 'cubic-bezier(.2,.68,.18,1.08)',
+                animationFillMode: 'both'
+              },
       spinnerDelay1: {
         animationDelay: '0.12s'
       },
