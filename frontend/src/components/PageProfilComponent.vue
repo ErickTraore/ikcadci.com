@@ -49,7 +49,7 @@
                           <div class='thing__header__body__content__saveOne'>Email: </div>
                           <div class='thing__header__body__content__saveTwo'> {{ profile.email }}</div>
                       </div>
-                      <div class='thing__header__body__content'>
+                      <div class='thing__header__body__content' v-if="usernametradition">
                           <div class='thing__header__body__content__saveOne'>Nom Tradition:</div>
                           <div class='thing__header__body__content__saveTwo'>  {{ profile.usernameTradition}}</div>
                       </div>
@@ -403,6 +403,7 @@
     name: 'PageProfil',
     data() {
         return{
+      usernametradition: false,
       title: "Hello",
       isShow: {
         'Star': false,
@@ -442,8 +443,6 @@
     }
 },
     created() {
-
-
       let objMySession = localStorage.getItem("obj")
       let myStorageToken = JSON.parse(objMySession)
       let token = myStorageToken.myToken;
@@ -455,6 +454,10 @@
         })
         .then(response => {
           this.profile = response.data
+          if(this.profile.usernameTradition){
+            this.usernametradition=true
+          }
+          console.log(this.usernametradition)
           this.testUser = this.profile.testUser
         })
         .catch((error) => console.log(error()))
@@ -474,34 +477,8 @@
           }
         })
           .then(response => {
-            this.profile.biographie= response.data.biographie
-            this.profile.lastname= response.data.lastname
-            this.profile.usernameTradition= response.data.usernameTradition
-            this.profile.lastnameTradition= response.data.lastnameTradition
-            this.profile.dateBirthday= response.data.dateBirthday
-            this.profile.townBirthday= response.data.townBirthday
-            this.profile.sexe= response.data.sexe
-            this.profile.nationalite= response.data.nationalite
-            this.profile.adresseResid= response.data.adresseResid
-            this.profile.villeResid= response.data.villeResid
-            this.profile.paysResid= response.data.paysResid
-            this.profile.tel1= response.data.tel1
-            this.profile.tel2= response.data.tel2
-            this.profile.tel3= response.data.tel3
-            this.profile.picked= response.data.picked
-            this.profile.seshsw= response.data.seshsw
-            this.profile.seba= response.data.seba
-            this.profile.profession= response.data.profession
-            this.profile.activite= response.data.activite
-            this.profile.acceptOne= response.data.acceptOne
-            this.profile.acceptTwo= response.data.acceptTwo
-
-            // if (this.profile.usernameTradition=''){
-            //   this.profileusernametradition = false
-            //   } else {
-            //     this.profileusernametradition = true
-            //     }
-
+              this.profile = response.data
+              window.location.reload();
 
           })
           .catch(error => console.log(error()))
