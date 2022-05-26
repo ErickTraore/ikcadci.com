@@ -456,6 +456,7 @@
           this.profile = response.data
           if(this.profile.usernameTradition){
             this.usernametradition=true
+
           }
           console.log(this.usernametradition)
           this.testUser = this.profile.testUser
@@ -478,7 +479,7 @@
         })
           .then(response => {
               this.profile = response.data
-              window.location.reload();
+              window.location.reload(true);
 
           })
           .catch(error => console.log(error()))

@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["login"],{a55b:function(n,e,t){"use strict";t.r(e);var o=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",{staticClass:"group__header__body__btn"},[t("h2",[n._v(n._s(n.title))]),t("ConexionComponent")],1)},a=[],i=t("5036"),l={name:"Login",components:{ConexionComponent:i["a"]},data(){return{title:"CONNEXION"}}},s=l,r=t("2877"),u=Object(r["a"])(s,o,a,!1,null,null,null);e["default"]=u.exports}}]);
+//# sourceMappingURL=login.3ace88af.js.map
