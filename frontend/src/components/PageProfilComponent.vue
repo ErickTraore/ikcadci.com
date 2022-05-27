@@ -37,79 +37,91 @@
               <div class='thing__header'>
                   <div class='thing__header__body__maj'>
                       <div class='thing__header__body__title'> Mon profil</div>
-                      <div class='thing__header__body__content'>
+
+                      <div class="thing__header__body__content">
                           <div class='thing__header__body__content__saveOne'>Nom:</div>
-                          <div class='thing__header__body__content__saveTwo'>{{ profile.username }}</div>
+                          <div class='thing__header__body__content__saveTwo'>{{ profile.username}}</div>
                       </div>
-                      <div class='thing__header__body__content'>
-                          <div class='thing__header__body__content__saveOne'>Prenom:</div>
-                          <div class='thing__header__body__content__saveTwo'> {{ profile.lastname }}</div>
-                      </div>
-                      <div class='thing__header__body__content'>
+
+                      <div class="thing__header__body__content">
                           <div class='thing__header__body__content__saveOne'>Email: </div>
-                          <div class='thing__header__body__content__saveTwo'> {{ profile.email }}</div>
+                          <div class='thing__header__body__content__saveTwo'> {{ profile.email}}</div>
                       </div>
-                      <div class='thing__header__body__content' v-if="usernametradition">
+
+                      <div class="thing__header__body__content">
+                          <div class='thing__header__body__content__saveOne'>Password: </div>
+                          <div class='thing__header__body__content__saveTwo'> {{ mdp }}</div>
+                      </div>
+
+                      <div class="thing__header__body__content" v-if=" profile.lastname ">
+                          <div class='thing__header__body__content__saveOne'>Prenom:</div>
+                          <div class='thing__header__body__content__saveTwo'> {{ profile.lastname}}</div>
+                      </div>
+
+                      
+
+                      <div class="thing__header__body__content" v-if=" profile.usernameTradition ">
                           <div class='thing__header__body__content__saveOne'>Nom Tradition:</div>
-                          <div class='thing__header__body__content__saveTwo'>  {{ profile.usernameTradition}}</div>
+                          <div class='thing__header__body__content__saveTwo'>  {{ profile.usernameTradition }}</div>
                       </div>
-                      <div class='thing__header__body__content'>
+
+                      <div class="thing__header__body__content" v-if=" profile.lastnameTradition ">
                           <div class='thing__header__body__content__saveOne'>Prenom Tradition:</div>
                           <div class='thing__header__body__content__saveTwo'>  {{ profile.lastnameTradition}}</div>
                       </div>
-                      <div class='thing__header__body__content'>
+                      <div class='thing__header__body__content' v-if=" profile.dateBirthday ">
                           <div class='thing__header__body__content__saveOne'>Date Naissance:</div>
                           <div class='thing__header__body__content__saveTwo'>  {{ profile.dateBirthday}}</div>
                       </div>
-                      <div class='thing__header__body__content'>
+                      <div class='thing__header__body__content' v-if="profile.townBirthday">
                           <div class='thing__header__body__content__saveOne'>Ville Naissance:</div>
                           <div class='thing__header__body__content__saveTwo'>  {{ profile.townBirthday}}</div>
                       </div>
-                      <div class='thing__header__body__content'>
-                          <div class='thing__header__body__content__saveOne'>sexe:</div>
+                      <div class='thing__header__body__content' v-if=" profile.sexe ">
+                          <div class='thing__header__body__content__saveOne'>Civilité:</div>
                           <div class='thing__header__body__content__saveTwo'>  {{ profile.sexe}}</div>
                       </div>
-                      <div class='thing__header__body__content'>
-                          <div class='thing__header__body__content__saveOne'>nationalite:</div>
+                      <div class='thing__header__body__content' v-if="profile.nationalite">
+                          <div class='thing__header__body__content__saveOne'>Nationalite:</div>
                           <div class='thing__header__body__content__saveTwo'>  {{ profile.nationalite}}</div>
                       </div>
-                      <div class='thing__header__body__content'>
-                          <div class='thing__header__body__content__saveOne'>adresseResid:</div>
+                      <div class='thing__header__body__content' v-if=" profile.adresseResid">
+                          <div class='thing__header__body__content__saveOne'>AdresseResid:</div>
                           <div class='thing__header__body__content__saveTwo'> {{ profile.adresseResid}}</div>
                       </div>
-                      <div class='thing__header__body__content'>
-                          <div class='thing__header__body__content__saveOne'>villeResid:</div>
+                      <div class='thing__header__body__content' v-if=" profile.villeResid">
+                          <div class='thing__header__body__content__saveOne'>VilleResid:</div>
                           <div class='thing__header__body__content__saveTwo'>  {{ profile.villeResid}}</div>
                       </div>
-                      <div class='thing__header__body__content'>
-                          <div class='thing__header__body__content__saveOne'>paysResid:</div>
+                      <div class='thing__header__body__content' v-if="profile.paysResid">
+                          <div class='thing__header__body__content__saveOne'>PaysResid:</div>
                           <div class='thing__header__body__content__saveTwo'>  {{ profile.paysResid}}</div>
                       </div>
-                      <div class='thing__header__body__content'>
-                          <div class='thing__header__body__content__saveOne'>tel1:</div>
+                      <div class='thing__header__body__content' v-if="profile.tel1">
+                          <div class='thing__header__body__content__saveOne'>Tel1:</div>
                           <div class='thing__header__body__content__saveTwo'>  {{ profile.tel1}}</div>
                       </div>
-                      <div class='thing__header__body__content'>
-                          <div class='thing__header__body__content__saveOne'>tel2:</div>
+                      <div class='thing__header__body__content' v-if="profile.tel2">
+                          <div class='thing__header__body__content__saveOne'>Tel2:</div>
                           <div class='thing__header__body__content__saveTwo'>  {{ profile.tel2}}</div>
                       </div>
-                      <div class='thing__header__body__content'>
-                          <div class='thing__header__body__content__saveOne'>tel3:</div>
+                      <div class='thing__header__body__content' v-if="profile.tel3">
+                          <div class='thing__header__body__content__saveOne'>Tel3:</div>
                           <div class='thing__header__body__content__saveTwo'>  {{ profile.tel3}}</div>
                       </div>
-                      <div class='thing__header__body__content'>
+                      <div class='thing__header__body__content' v-if="profile.profession">
                           <div class='thing__header__body__content__saveOne'>Profession<sup>*</sup>:</div>
                           <div class='thing__header__body__content__saveTwo'> {{ profile.profession }}</div>
                       </div> 
-                      <div class='thing__header__body__content'>
+                      <div class='thing__header__body__content' v-if="profile.activite">
                           <div class='thing__header__body__content__saveOne'>Activite:</div>
                           <div class='thing__header__body__content__saveTwo'> {{ profile.activite }}</div>
                       </div>
-                      <div class='thing__header__body__content'>
+                      <div class='thing__header__body__content' v-if="profile.acceptOne">
                           <div class='thing__header__body__content__saveOne'>Conditons Générales:</div>
                           <div class='thing__header__body__content__saveTwo'> {{ profile.acceptOne }}</div>
                       </div>
-                      <div class='thing__header__body__content'>
+                      <div class='thing__header__body__content' v-if="profile.acceptTwo">
                           <div class='thing__header__body__content__saveOne'>Conditons Particulières:</div>
                           <div class='thing__header__body__content__saveTwo'> {{ profile.acceptTwo }}</div>
                       </div>
@@ -399,11 +411,11 @@
 </template>
 <script>
   import axios from 'axios';
-  export default{
+  export default {
     name: 'PageProfil',
     data() {
-        return{
-      usernametradition: false,
+      return{
+        mdp: "*****",
       title: "Hello",
       isShow: {
         'Star': false,
@@ -438,11 +450,12 @@
           activite: '',
           acceptOne: '',
           acceptTwo: ''
-      },
-          
-    }
-},
+        }
+      }
+    },
     created() {
+     
+
       let objMySession = localStorage.getItem("obj")
       let myStorageToken = JSON.parse(objMySession)
       let token = myStorageToken.myToken;
@@ -454,11 +467,6 @@
         })
         .then(response => {
           this.profile = response.data
-          if(this.profile.usernameTradition){
-            this.usernametradition=true
-
-          }
-          console.log(this.usernametradition)
           this.testUser = this.profile.testUser
         })
         .catch((error) => console.log(error()))
@@ -466,7 +474,7 @@
     methods: {
       myFunction: function () {	
         this.posts.seba = JSON.stringify(this.checkedFormations)
-        },
+     },
       postData(e) {
         let objMySession = localStorage.getItem("obj")
         let myStorageToken = JSON.parse(objMySession)
@@ -479,11 +487,11 @@
         })
           .then(response => {
               this.profile = response.data
-              window.location.reload(true);
+              // window.location.reload()
 
           })
           .catch(error => console.log(error()))
-          e.preventDefault();
+          e.preventDefault()
       },
       delProfil() {
         let objMySession = localStorage.getItem("obj")
@@ -499,164 +507,9 @@
             this.profile = response.data
           })
           .catch(error => {
-              console.error(error);
-
+              console.error(error)
             })
-
       }
     }
-  }
+    }
 </script>
-<style>
-    $body-color: #818181;
-    $border: #DDDDDD;
-    $yellow: #FFB715;
-    $white: #ffffff;
-    $purple: #800080;
-    $nav-bg: #F5F7FA;
-    $white: #ffffff;
-    $background-image-linear-blue: linear-gradient(to bottom, #016BA8, #569BCA, #9FC5E8);
-    $orange: #FFB715;
-    $blue:#016BA8;
-    $muted:#707070;
-    $border: #DDDDDD;
-    $purple: linear-gradient(180deg, rgba(226,48,219,1) 7%, rgba(193,53,163,1) 41%, rgba(119,21,128,1) 94%);
-
-body{
-  background: $purple;
-  height: 100vh;
-}
-
-.seperator {
-        margin-top: 25px;
-        border-top: 1px solid $nav-bg;
-        padding-top: 25px;
-    }
-
-.blueBar {
-    background: $nav-bg;
-    color: $muted;
-    padding: 15px 20px;
-    margin-top: 15px;
-    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
-    border-radius: 50px;
-    &:hover {
-      opacity: 0.8;
-        cursor: pointer;
-        transition: all 1s;
-        h5 {
-            color: $white;
-        }
-    }
-
-    h2 {
-        text-transform: uppercase;
-        margin: 0;
-        color: $muted;
-        font-size: 16px;
-    }
-    .fa-bars {
-        transform: rotate(90deg);
-    }
-}
-
-.red {
-    .fa-chevron-down,
-    .fa-plus {
-        animation: rotate-in 0.5s forwards;
-    }
-    @keyframes rotate-in {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(45deg);
-        }
-    }
-}
-
-.slide-enter-active {
-    -moz-transition-duration: 0.5s;
-    -webkit-transition-duration: 0.5s;
-    -o-transition-duration: 0.5s;
-    transition-duration: 0.5s;
-    -moz-transition-timing-function: ease-in;
-    -webkit-transition-timing-function: ease-in;
-    -o-transition-timing-function: ease-in;
-    transition-timing-function: ease-in;
-}
-
-.slide-leave-active {
-    -moz-transition-duration: 0.5s;
-    -webkit-transition-duration: 0.5s;
-    -o-transition-duration: 0.5s;
-    transition-duration: 0.5s;
-    -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-    -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-    -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-}
-
-.slide-enter-to,
-.slide-leave {
-    max-height: 100px;
-    overflow: hidden;
-}
-
-.slide-enter,
-.slide-leave-to {
-    overflow: hidden;
-    max-height: 0;
-}
-
-.content{
-  margin-top: 20px;
-  background: none;
-  color: $white;
-}
-
-.internalPadding {
-    padding: 0 25px;
-}
-
-button{
-  background: #nag-bg;
-  color: $muted;
-  border: none;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding:5px 15px;
-  box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.35);
-  border-radius: 5px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-  transition: all 1s;
-  &:hover{
-    background: $yellow;
-    box-shadow: none;
-    cursor: pointer;
-  }&:focus{
-    outline: none;
-  }
-}
-
-.tab-container{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-}
-
- h1 {
-        text-transform: uppercase;
-        margin: 0;
-        color: $nav-bg;
-        font-size: 48px;
-        letter-spacing: 25px;
-        margin-bottom: 1rem;
-        font-weight: light;
-        
-    }
-</style>
