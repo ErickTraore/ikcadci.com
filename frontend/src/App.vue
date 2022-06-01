@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse" id="mynavbar">
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <router-link class="nav-link" to="/">Messagerie</router-link> 
+              <router-link class="nav-link" to="/home">Messagerie</router-link> 
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/page-profil">Profil</router-link>  

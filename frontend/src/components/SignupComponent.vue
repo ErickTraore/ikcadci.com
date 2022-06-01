@@ -51,10 +51,9 @@
         </form>
          <div>Vous avez déja un compte:</div>
      <div>
-       <a href="/signin#/login">Connectez-vous içi</a>
-
-       </div>
-    </div>
+        <a href="/">Connectez-vous içi</a>
+        </div>
+     </div>
 </template>
 
 <script>
@@ -110,7 +109,7 @@
         this.axios.post('https://212.227.142.69:3000/api/users/register/', user)
           .then(response => {
             this.data = response.data
-             this.$router.push({path: '/login'})
+             this.$router.push({path: '/'})
               })
           .catch((error) => {
             console.log(error)

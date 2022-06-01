@@ -94,13 +94,12 @@
                     let sessionStore = JSON.stringify(objMySession);
                     localStorage.setItem("obj",sessionStore);
                     this.$store.dispatch("nowLogged");
-                    this.$router.push({path: '/'});
-                    window.location.reload();
+                    this.$router.push({path: '/home-formation'});
                     })
           .catch((error) => {
             console.log(error)
             this.errors.push('Votre mot de passe est éronné.');
-            this.$router.push({path: '/login'})
+            this.$router.push({path: '/'})
             })
              },
 
