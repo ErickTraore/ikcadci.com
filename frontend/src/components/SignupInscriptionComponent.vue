@@ -1,6 +1,7 @@
 <template>
     <div id="app">
         <div class="container">
+  
               <div class="row">
                     <div class="col-md-12 internalPadding">
                         <div class="blueBar" @click="isShow['Diehardone'] = !isShow['Diehardone']" :class="{'red': isShow['Diehardone']}">
@@ -14,86 +15,77 @@
                     </div><!-- End col -->
               </div><!-- End Row -->
               <transition name="slide">
-              <div class="row content internalPadding" v-if="isShow['Diehardone']">
-                  <div class="col-12">
-                  <div class="cardPageFormation">
-                      <div class='thing'>
-                        <div  class='thing__header'>
-                              <form @submit="postData" method="post">
-                            <div class="proj__card">
-                                <div class="proj__card__firstTitle"  @click="isShowingSeshsw ^= true">SESHSW</div>
-                                <div class="proj__card__show"  v-show="isShowingSeshsw">
-                                      <div class="proj__card__show__frame">
-                                      <!-- FORMATION_1 -->
-                                          <div class='thing__header__body'>
-                                        <!-- PART_1 -->
-                                              <div class='thing__header__body__seba'>
-                                              <div class='thing__header__body__seba__box'>
-                                                    <input
-                                                    type="radio"
-                                                    id="seshsw-s0"
-                                                    value="sehsw-s0"
-                                                    v-model="posts.seshsw">
-                                                    <label for="seshsw-s0">Aucun</label>
-                                              </div>
-                                              </div>
-                                              
-                                                  <!-- PART_2 -->
-                                              <div class='thing__header__body__seba'>
-                                                      <div class='thing__header__body__seba__box'> 
-                                                          <input 
-                                                          type="radio" 
-                                                          id="seshsw-s1" 
-                                                          value="seshsw-s1" 
-                                                          v-model="posts.seshsw">
-                                                          <label for="seshsw-s1">seshsw-semestre-1</label>
-                                                      </div>
-                                              </div>
-                                                  <!-- PART_3 -->
-                                              <div class='thing__header__body__seba'>
-                                                      <div class='thing__header__body__seba__box'><input 
-                                                          type="radio" 
-                                                          id="seshsw-s2" 
-                                                          value="seshsw-s2" 
-                                                          v-model="posts.seshsw">
-                                                          <label for="seshsw-s2">seshsw-semestre-2</label>
-                                                      </div>
-                                              </div>
-                                                  <!-- PART_4 -->
-                                              <div class='thing__header__body__seba'>
-                                                      <div class='thing__header__body__seba__box'><input 
-                                                          type="radio" 
-                                                          id="seshsw-s3" 
-                                                          value="seshsw-s3" 
-                                                          v-model="posts.seshsw">
-                                                          <label for="seshsw-s3">seshsw-semestre-3</label>  
-                                                      </div>
-                                              </div>
-                                                  <!-- PART_5 -->
-                                              <div class='thing__header__body__seba'>
-                                                      <div class='thing__header__body__seba__box'>
-                                                        <input 
-                                                          type="radio" 
-                                                          id="seshsw-s4" 
-                                                          value="seshsw-s4" 
-                                                          v-model="posts.seshsw">
-                                                          <label for="seshsw-s4">seshsw-semestre-4</label>
-                                                      </div>
-                                              </div>
-                                      <button type="submit">Validation inscription</button>
-                                </div>
-                                </div>
-                                </div>
-                                </div>
-                       
-                      </form>
-                      </div>
-                        </div>
-                    </div>
-               </div><!-- End Col -->
-                          <!-- End Col -->
-                </div><!-- End Row -->
+                  <div class="row content internalPadding" v-if="isShow['Diehardone']">
+                      <div class="col-12">
+                          <div class="cardPageFormation">
+                              <div class='thing'>
+                                  <div  class='thing__header'>
+                                            <form @submit="postData" method="post">
+
+                                                  <div class="proj__card__show__frame">
+                                                      <div class='thing__header__body'>
+                                                              <div class='thing__header__body__seba'>
+                                                                  <div class='thing__header__body__seba__box'>
+                                                                      <input
+                                                                      type="radio"
+                                                                      id="seshsw-s0"
+                                                                      value="sehsw-s0"
+                                                                      v-model="posts.seshsw">
+                                                                      <label for="seshsw-s0">Aucun</label>
+                                                                  </div>
+                                                              </div>
+                                                              <div class='thing__header__body__seba'>
+                                                                      <div class='thing__header__body__seba__box'> 
+                                                                          <input 
+                                                                          type="radio" 
+                                                                          id="seshsw-s1" 
+                                                                          value="seshsw-s1" 
+                                                                          v-model="posts.seshsw">
+                                                                          <label for="seshsw-s1">seshsw-semestre-1</label>
+                                                                      </div>
+                                                              </div>
+                                                                  <!-- PART_3 -->
+                                                              <div class='thing__header__body__seba'>
+                                                                      <div class='thing__header__body__seba__box'><input 
+                                                                          type="radio" 
+                                                                          id="seshsw-s2" 
+                                                                          value="seshsw-s2" 
+                                                                          v-model="posts.seshsw">
+                                                                          <label for="seshsw-s2">seshsw-semestre-2</label>
+                                                                      </div>
+                                                              </div>
+                                                                  <!-- PART_4 -->
+                                                              <div class='thing__header__body__seba'>
+                                                                      <div class='thing__header__body__seba__box'><input 
+                                                                          type="radio" 
+                                                                          id="seshsw-s3" 
+                                                                          value="seshsw-s3" 
+                                                                          v-model="posts.seshsw">
+                                                                          <label for="seshsw-s3">seshsw-semestre-3</label>  
+                                                                      </div>
+                                                              </div>
+                                                                  <!-- PART_5 -->
+                                                              <div class='thing__header__body__seba'>
+                                                                      <div class='thing__header__body__seba__box'>
+                                                                        <input 
+                                                                          type="radio" 
+                                                                          id="seshsw-s4" 
+                                                                          value="seshsw-s4" 
+                                                                          v-model="posts.seshsw">
+                                                                          <label for="seshsw-s4">seshsw-semestre-4</label>
+                                                                      </div>
+                                                              </div>
+                                                          <button type="submit">Validation inscription</button>
+                                                          </div>
+                                                  </div>
+                                            </form>
+                                  </div>         
+                              </div>
+                          </div>
+                      </div><!-- End Col -->
+                  </div>
               </transition>
+  
               <div class="row">
                       <div class="col-md-12 internalPadding">
                                     <div class="blueBar" @click="isShow['Diehardtwo'] = !isShow['Diehardtwo']" :class="{'red': isShow['Diehardtwo']}">
@@ -107,90 +99,107 @@
                       </div><!-- End col -->
               </div><!-- End Row -->
               <transition name="slide">
-              <div class="row content internalPadding" v-if="isShow['Diehardtwo']">
-              <div class="col-12">
-                      <div class='thing'>
-            <div  class='thing__header'>
-                  <form @submit="postData" method="post">
-                <div class="proj__card">
-                    <div class="proj__card__firstTitle"  @click="isShowingSeshsw ^= true">SESHSW-NSW</div>
-                    <div class="proj__card__show"  v-show="isShowingSeshsw">
-                          <div class="proj__card__show__frame">
-                            <div class='thing__header__body'>
-                        <!-- PART_1 -->
+                  <div class="row content internalPadding" v-if="isShow['Diehardtwo']">
+                      <div class="col-12">
+                         <div class='thing'>
+                            <div  class='thing__header'>
+                                <form @submit="postData" method="post">
+                                    <div class="proj__card__show__frame">
+                                        <div class='thing__header__body'>
+                                                    <div class='thing__header__body__seba'>
+                                                        <div class='thing__header__body__seba__box'> 
+                                                            <input 
+                                                            type="radio" 
+                                                            id="seshsw-nsw-s0" 
+                                                            value="sehsw-nsw-s0" 
+                                                            v-model="posts.seshsw">
+                                                            <label for="seshsw-s0">Aucun</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class='thing__header__body__seba'>
+                                                        <div class='thing__header__body__seba__box'>
+                                                            <input 
+                                                                type="radio" 
+                                                                id="seshsw-s5" 
+                                                                value="seshsw-nsw-s1" 
+                                                                v-model="posts.seshsw">
+                                                                <label for="seshsw-s5">seshsw-nsw-semestre-1</label>
+                                                        </div>
+                                                    </div>
 
-                     <div class='thing__header__body__seba'>
-                            <div class='thing__header__body__seba__box'> 
-                                <input 
-                                type="radio" 
-                                id="seshsw-s0" 
-                                value="sehsw-s0" 
-                                v-model="posts.seshsw">
-                                <label for="seshsw-s0">Aucun</label>
+                                                    <div class='thing__header__body__seba'>
+                                                        <div class='thing__header__body__seba__box'>
+                                                            <input 
+                                                            type="radio" 
+                                                            id="seshsw-s6" 
+                                                            value="seshsw-nsw-s2" 
+                                                            v-model="posts.seshsw">
+                                                            <label for="seshsw-s6">seshsw-nsw-semestre-2</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class='thing__header__body__seba'>
+                                                        <div class='thing__header__body__seba__box'>
+                                                              <input 
+                                                            type="radio" 
+                                                            id="seshsw-s7" 
+                                                            value="seshsw-nsw-s3" 
+                                                            v-model="posts.seshsw">
+                                                            <label for="seshsw-s7">seshsw-nsw-semestre-3</label>  
+                                                        </div>
+                                                    </div>
+
+                                                    <div class='thing__header__body__seba'>
+                                                        <div class='thing__header__body__seba__box'>
+                                                            <input 
+                                                            type="radio" 
+                                                            id="seshsw-s8" 
+                                                            value="seshsw-nsw-s4" 
+                                                            v-model="posts.seshsw">
+                                                            <label for="seshsw-s8">seshsw-nsw-semestre-4</label>
+                                                        </div>
+                                                    </div>
+                                                    <button type="submit">Validation inscription</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                     </div>
-                    <div class='thing__header__body__seba'>
-                            <div class='thing__header__body__seba__box'>
-                               <input 
-                                type="radio" 
-                                id="seshsw-s5" 
-                                value="seshsw-nsw-s1" 
-                                v-model="posts.seshsw">
-                                <label for="seshsw-s5">seshsw-nsw-semestre-1</label>
-                            </div>
-                    </div>
-
-                    <div class='thing__header__body__seba'>
-                      <div class='thing__header__body__seba__box'>
-                          <input 
-                          type="radio" 
-                          id="seshsw-s6" 
-                          value="seshsw-nsw-s2" 
-                          v-model="posts.seshsw">
-                          <label for="seshsw-s6">seshsw-nsw-semestre-2</label>
-                      </div>
-                    </div>
-
-                    <div class='thing__header__body__seba'>
-                      <div class='thing__header__body__seba__box'>
-                            <input 
-                          type="radio" 
-                          id="seshsw-s7" 
-                          value="seshsw-nsw-s3" 
-                          v-model="posts.seshsw">
-                          <label for="seshsw-s7">seshsw-nsw-semestre-3</label>  
-                      </div>
-                    </div>
-
-                    <div class='thing__header__body__seba'>
-                      <div class='thing__header__body__seba__box'>
-                          <input 
-                          type="radio" 
-                          id="seshsw-s8" 
-                          value="seshsw-nsw-s4" 
-                          v-model="posts.seshsw">
-                          <label for="seshsw-s8">seshsw-nsw-semestre-4</label>
-                      </div>
-                    </div>
-
-                            <button type="submit">Validation inscription</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          </form>
-          </div>
-     </div>
-              </div><!-- End Col -->
-              <!-- End Col -->
-              </div><!-- End Row -->
+                        </div>
+                    </div><!-- End Col -->
+                </div><!-- End Row -->
               </transition>
+  
+              <div class="row">
+                    <div class="col-md-12 internalPadding">
+                        <div class="blueBar" @click="isShow['Diehardtree'] = !isShow['Diehardtree']" :class="{'red': isShow['Diehardtree']}">
+                            <div class="d-flex">
+                                <h2><i class="fas fa-sleigh"></i>&nbsp; &nbsp;Inscription: SEBA  </h2>
+                                <div class="ml-auto">
+                                      <i class="fas fa-plus ml-auto"></i>
+                                </div>
+                            </div>
+                        </div><!-- End BlueBar -->
+                    </div><!-- End col -->
+              </div><!-- End Row -->
+              <transition name="slide">
+                  <div class="row content internalPadding" v-if="isShow['Diehardtree']">
+                      <div class="col-12">
+                          <SebaComponent />
+                      </div><!-- End Col -->
+                  </div><!-- End Row -->
+              </transition>
+  
         </div><!-- End Col -->
     </div><!-- End Container -->
 </template>
 <script scoped>
 import axios from 'axios';
+import SebaComponent from '@/components/SebaComponent.vue';
   export default {
+    name: 'SignupInscriptionComponent',
+     components: {
+    SebaComponent
+    },
     data: function() {
       return {
          isShow: {

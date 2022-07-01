@@ -217,25 +217,25 @@ const routes = [{
         path: '/pages/seshsw-nsw-s1',
         name: 'Pages/seshsw-nsw-s1',
         component: () =>
-            import ( /* webpackChunkName: "Pages/seshsw-nsw-s1.vue" */ '../views/Pages/seshsw-nsw-s1.vue')
+            import ( /* webpackChunkName: "pages/seshsw-nsw-s1.vue" */ '../views/Pages/seshsw-nsw-s1.vue')
     },
     {
         path: '/pages/seshsw-nsw-s2',
         name: 'Pages/seshsw-nsw-s2',
         component: () =>
-            import ( /* webpackChunkName: "Pages/seshsw-nsw-s2.vue" */ '../views/Pages/seshsw-nsw-s2.vue')
+            import ( /* webpackChunkName: "pages/seshsw-nsw-s2.vue" */ '../views/Pages/seshsw-nsw-s2.vue')
     },
     {
         path: '/pages/seshsw-nsw-s3',
         name: 'Pages/seshsw-nsw-s3',
         component: () =>
-            import ( /* webpackChunkName: "Pages/seshsw-nsw-s3.vue" */ '../views/Pages/seshsw-nsw-s3.vue')
+            import ( /* webpackChunkName: "pages/seshsw-nsw-s3.vue" */ '../views/Pages/seshsw-nsw-s3.vue')
     },
     {
         path: '/pages/seshsw-nsw-s4',
         name: 'Pages/seshsw-nsw-s4',
         component: () =>
-            import ( /* webpackChunkName: "Pages/seshsw-nsw-s4.vue" */ '../views/Pages/seshsw-nsw-s4.vue')
+            import ( /* webpackChunkName: "pages/seshsw-nsw-s4.vue" */ '../views/Pages/seshsw-nsw-s4.vue')
     },
     {
         path: '/pages/seshsw-s1',
@@ -316,10 +316,124 @@ const routes = [{
             import ( /* webpackChunkName: "connected" */ '../views/Connected')
     },
     {
+        path: '/pieceIdentite',
+        name: 'PieceIdentite',
+        component: () =>
+            import ( /* webpackChunkName: "pieceIdentite.vue" */ '../views/PieceIdentite.vue')
+    },
+    {
+        path: '/piecePhoto',
+        name: 'PiecePhoto',
+        component: () =>
+            import ( /* webpackChunkName: "piecePhoto.vue" */ '../views/PiecePhoto.vue')
+    },
+    {
+        path: '/pieceMotivation',
+        name: 'PieceMotivation',
+        component: () =>
+            import ( /* webpackChunkName: "pieceMotivation.vue" */ '../views/PieceMotivation.vue')
+    },
+    {
+        path: '/pieceAdresse',
+        name: 'PieceAdresse',
+        component: () =>
+            import ( /* webpackChunkName: "pieceAdresse.vue" */ '../views/PieceAdresse.vue')
+    },
+    {
+        path: '/pieceDiplome',
+        name: 'PieceDiplome',
+        component: () =>
+            import ( /* webpackChunkName: "pieceDiplome.vue" */ '../views/PieceDiplome.vue')
+    },
+    {
         path: '/piece',
         name: 'Piece',
         component: () =>
             import ( /* webpackChunkName: "piece.vue" */ '../views/Piece.vue')
+    },
+    {
+        path: '/seba',
+        name: 'Seba',
+        component: () =>
+            import ( /* webpackChunkName: "seba.vue" */ '../views/Seba.vue')
+    },
+    {
+        path: '/page-formation-seba',
+        name: 'Page-formation-seba',
+        component: () =>
+            import ( /* webpackChunkName: "page-formation-seba.vue" */ '../views/Page-formation-seba.vue')
+    },
+    {
+        path: '/page-formation-seshw',
+        name: 'Page-formation-seshw',
+        component: () =>
+            import ( /* webpackChunkName: "page-formation-seshw.vue" */ '../views/Page-formation-seshw.vue')
+    },
+    {
+        path: '/page-formation-seshw2',
+        name: 'Page-formation-seshw2',
+        component: () =>
+            import ( /* webpackChunkName: "page-formation-seshw2.vue" */ '../views/Page-formation-seshw2.vue')
+    },
+    {
+        path: '/engagement',
+        name: 'Engagement',
+        component: () =>
+            import ( /* webpackChunkName: "engagement.vue" */ '../views/Engagement.vue')
+    },
+    {
+        path: '/seshw',
+        name: 'Seshw',
+        component: () =>
+            import ( /* webpackChunkName: "seshw.vue" */ '../views/Seshw.vue')
+    },
+    {
+        path: '/piecemix',
+        name: 'Piecemix',
+        component: () =>
+            import ( /* webpackChunkName: "piecemix.vue" */ '../views/Piecemix')
+    },
+    {
+        path: '/formulaire',
+        name: 'Formulaire',
+        component: () =>
+            import ( /* webpackChunkName: "formulaire.vue" */ '../views/Formulaire')
+    },
+    {
+        path: '/page-formation-gle',
+        name: 'Page-formation-gle',
+        component: () =>
+            import ( /* webpackChunkName: "page-formation-gle.vue" */ '../views/Page-formation-gle.vue')
+    },
+    {
+        path: '/admin/listeBeforeStudents',
+        name: 'Admin/ListeBeforeStudents',
+        component: () =>
+            import ( /* webpackChunkName: "admin/listeBeforeStudents.vue" */ '../views/Admin/ListeBeforeStudents.vue')
+    },
+    {
+        path: '/admin/consulte',
+        name: 'Admin/Consulte',
+        component: () =>
+            import ( /* webpackChunkName: "admin/consulte.vue" */ '../views/Admin/Consulte.vue')
+    },
+    {
+        path: '/admin/pageConforme/:userId',
+        name: 'Admin/PageConforme/:userId',
+        component: () =>
+            import ( /* webpackChunkName: "admin/pageConforme/:userId.vue" */ '../views/Admin/PageConforme.vue')
+    },
+    {
+        path: '/admin/pageConforme',
+        name: 'Admin/PageConforme',
+        component: () =>
+            import ( /* webpackChunkName: "admin/pageConforme.vue" */ '../views/Admin/PageConforme.vue')
+    },
+    {
+        path: '/admin/pageEmailConforme',
+        name: 'Admin/PageEmailConforme',
+        component: () =>
+            import ( /* webpackChunkName: "admin/pageEmailConforme.vue" */ '../views/Admin/PageEmailConforme.vue')
     },
 
 ]

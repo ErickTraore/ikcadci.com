@@ -31,7 +31,7 @@
               <router-link class="nav-link" to="/maClass">Classe</router-link>  
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" v-if=logged to="/login">  <span class="fa fa-user "></span> Connexion</router-link>  
+              <router-link class="nav-link" v-if=logged to="/">  <span class="fa fa-user "></span> Connexion</router-link>  
               <router-link class="nav-link" v-else  to="/logout">Déconnexion</router-link> 
             </li>
             <li class="nav-item">

@@ -8,7 +8,7 @@
                 <a href="#"   class="stepper__item"  v-on:click="page =1" :class="{'stepper__item current': page === 1}"><li>1-Identification </li></a>
                 <a href="#"   class="stepper__item"  v-on:click="page =2" :class="{'stepper__item current': page === 2}"><li>2-Choisir ma formation</li></a>
                 <a href="#"   class="stepper__item"  v-on:click="page =3" :class="{'stepper__item current': page === 3}"><li>3-Pièces-jointes</li></a>
-                <a href="#"   class="stepper__item"  v-on:click="page =4" :class="{'stepper__item current': page === 4}"><li>4-Conditions</li></a>
+                <a href="#"   class="stepper__item"  v-on:click="page =4" :class="{'stepper__item current': page === 4}"><li>4-Engagements</li></a>
                 <a href="#"   class="stepper__item"  v-on:click="page =5" :class="{'stepper__item current': page === 5}"><li>5-Envoyez</li></a>
                 </ul>
                 <div id="content" style="width: 100%;">
@@ -28,13 +28,13 @@
 
                     <div v-if="page==3" id="sec_three">
                        <div class="stepper2">
-                          <ConditionComponent/>
+                          <PieceComponent/>
                       </div>
                     </div>
 
                      <div v-if="page==4" id="sec_four">
                        <div class="stepper2">
-                          <ConditionComponent/>
+                          <EngagementComponent/>
                       </div>
                     </div>
 
@@ -71,8 +71,9 @@
 <script>
   import SignupInscriptionComponent from '@/components/SignupInscriptionComponent.vue'
   import FormulaireComponent from '@/components/FormulaireComponent.vue'
-  import ConditionComponent from '@/components/ConditionComponent.vue'
+  import EngagementComponent from '@/components/EngagementComponent.vue'
   import InfoComponent from '@/components/InfoComponent.vue'
+  import PieceComponent from '@/components/PieceComponent.vue'
   import Vue from "vue";
   import VueAxios from "vue-axios";
   import axios from "axios";
@@ -82,8 +83,9 @@
 export default {
     name: 'Stepper',
      components: {
+    PieceComponent,
     InfoComponent,
-    ConditionComponent,
+    EngagementComponent,
     FormulaireComponent,
     SignupInscriptionComponent
     },

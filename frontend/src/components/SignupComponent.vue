@@ -86,10 +86,10 @@
         if (!this.user.password) {
           this.errors.push('Veillez saisir un mot de passe');
         } else if (!this.validPassword(this.user.password)) {
-          this.errors.push('Votre mot de passe doit contenir entre 4 et 8 caractères et au moins un chiffre');
+          this.errors.push('Votre mot de passe doit contenir entre 4 et 20 caractères et au moins un chiffre');
         }
-        if (!this.user.username || this.user.username.length >= 13 || this.user.username.length <= 3) {
-          this.errors.push('Votre pseudo doit contenir entre 4 et 12 caractères');
+        if (!this.user.username || this.user.username.length >= 21 || this.user.username.length <= 3) {
+          this.errors.push('Votre pseudo doit contenir entre 4 et 20 caractères');
         }
         if (!this.user.email) {
           this.errors.push('Veillez saisir votre email');
@@ -125,7 +125,7 @@
 
       },
       validPassword: function (password) {
-        const regex = /^(?=.*\d).{4,8}$/;
+        const regex = /^(?=.*\d).{4,20}$/;
         return regex.test(password);
       }
     }

@@ -57,9 +57,13 @@
             padding: 1rem 2rem;
             display: flex;
             justify-content: center;
+            flex-direction: column;
             border-radius: 2rem;
             border: solid 3px #1a1db8;
             font-size: large;
+            p {
+                font-size: smaller;
+            }
         }
         &__articledeux {
             width: 100%;

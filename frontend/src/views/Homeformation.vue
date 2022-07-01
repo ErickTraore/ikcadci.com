@@ -2,24 +2,13 @@
   <div>
       <div class="thing">
         <div class="thing__header">
-              <a class="thing__header__body" href="/#/page-formation">Formation diplomante</a>
+              <a class="thing__header__body" href="/#/page-formation"><p>Formation diplomante</p><p>SESHSW  SESHW-NSW</p></a>
 
-              <a class="thing__header__body" href="/Singnup#/signup">Formation certifiante</a>
+              <a class="thing__header__body" href="/Singnup#/signup"><p>Formation diplomante</p><p>SEBA</p></a>
 
               <a class="thing__header__body" href="/Singnup#/signup">Formation libre</a>
           </div>
       </div>
-      <div class="thing">
-          <div class="thing__home">
-              <div class="thing__home__header">
-                    <a class="thing__home__header__body" href="/#/page-formation">Formation diplomante</a>
-
-                    <a class="thing__home__header__body" href="/Singnup#/signup">Formation certifiante</a>
-
-                    <a class="thing__home__header__body" href="/Singnup#/signup">Formation libre</a>
-                </div>
-          </div>
-      </div> 
   </div>
 </template>
 <script>

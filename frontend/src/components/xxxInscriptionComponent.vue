@@ -14,7 +14,7 @@
         </div>
 
         <div class="conditions__title__content">
-        <p>- Vous recevrez parmail un récipisé de demande d'inscription
+        <p>- Vous recevrez parmail un récépisé de demande d'inscription
         </p>
 
 
