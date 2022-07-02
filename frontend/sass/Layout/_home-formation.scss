@@ -3,8 +3,7 @@
     display: flex;
     padding: 1rem 1rem;
     border-radius: 2rem;
-    justify-content: space-evenly;
-    background-color: #bdbab3;
+    flex-direction: column;
     border: solid 5px rgb(231, 233, 237);
     margin-bottom: 20px;
     &__div {
@@ -15,8 +14,8 @@
         padding: 1rem 1rem;
         margin: 1rem 1rem;
         border-radius: 2rem;
-        background-color: white;
-        border: solid 3px rgb(161, 163, 167);
+        background-color: rgb(220, 221, 225);
+        border: solid 3px rgb(84, 86, 88);
         &:hover {
             color: white;
             background-color: brown;
