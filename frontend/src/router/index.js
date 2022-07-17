@@ -9,8 +9,16 @@ const routes = [{
         path: '/',
         name: 'Login',
         component: Login,
+    },
 
-
+    {
+        path: '/signup',
+        name: 'Signup',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () =>
+            import ( /* webpackChunkName: "signup" */ '../views/Signup.vue')
     },
     {
         path: '/home',
@@ -30,16 +38,7 @@ const routes = [{
         component: () =>
             import ( /* webpackChunkName: "logout" */ '../views/Logout.vue')
     },
-    {
-        path: '/signup',
-        name: 'Signup',
 
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () =>
-            import ( /* webpackChunkName: "signup" */ '../views/Signup.vue')
-    },
     {
         path: '/profile',
         name: 'Profile',
@@ -435,12 +434,32 @@ const routes = [{
         component: () =>
             import ( /* webpackChunkName: "admin/pageEmailConforme.vue" */ '../views/Admin/PageEmailConforme.vue')
     },
+    {
+        path: '/accueil',
+        name: 'Accueil',
+        component: () =>
+            import ( /* webpackChunkName: "accueil.vue" */ '../views/Accueil.vue')
+    },
+    {
+        path: '/forgetPassword',
+        name: 'ForgetPassword',
+        component: () =>
+            import ( /* webpackChunkName: "forgetPassword.vue" */ '../views/ForgetPassword.vue')
+    },
+    {
+        path: '/createPass',
+        name: 'CreatePass',
+        component: () =>
+            import ( /* webpackChunkName: "createPass.vue" */ '../views/CreatePass.vue')
+    }
 
 ]
 
+
 const router = new VueRouter({
+    // mode: 'history',
     routes
-})
+});
 
 
 

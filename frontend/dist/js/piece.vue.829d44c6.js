@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["piece.vue"],{"48ad":function(e,n,c){"use strict";c.r(n);var t=function(){var e=this,n=e.$createElement,c=e._self._c||n;return c("div",{staticClass:"Piece"},[c("PieceComponent")],1)},i=[],o=c("7c5b"),a={name:"Piece",components:{PieceComponent:o["a"]}},s=a,l=c("2877"),p=Object(l["a"])(s,t,i,!1,null,null,null);n["default"]=p.exports}}]);
-//# sourceMappingURL=piece.vue.829d44c6.js.map

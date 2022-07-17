@@ -420,7 +420,7 @@ export default{
         })
         .catch(error => {
            this.$store.dispatch("beforeLogged")
-                    this.$router.push({path: '/login'});
+                    this.$router.push({path: '/'});
                     return console.log(error())
         })
     },

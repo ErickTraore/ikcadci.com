@@ -1,51 +1,18 @@
 <template>
     <div id="app">
-       <div class="container">
-            <div class="row">
-                        <div class="col-md-12 internalPadding">
-                          <div class="blueBar" @click="isShow['Star'] = !isShow['Star']" :class="{'red': isShow['Star']}">
-                            <div class="d-flex">
-                              <h2><i class="fab fa-jedi-order"></i>&nbsp; &nbsp;Mon profil </h2>
-                              <div class="ml-auto">
-                                <i class="fas fa-plus ml-auto"></i>
-                              </div>
-                            </div>
-                          </div><!-- End BlueBar -->
-                        </div><!-- End col -->
-            </div><!-- End Row -->
-            <transition name="slide">
-                <div class="row content internalPadding" v-if="isShow['Star']">
-                          <div class="col-12">
-        <!--Debut integration-1 -->
- <div class="row">
-          <div class="col-md-12 internalPadding">
-                          <div class="blueBar" @click="isShow['Diehard'] = !isShow['Diehard']" :class="{'red': isShow['Diehard']}">
-                            <div class="d-flex">
-                              <h2><i class="fas fa-sleigh"></i>&nbsp; &nbsp;Infos profil </h2>
-                              <div class="ml-auto">
-                                <i class="fas fa-plus ml-auto"></i>
-                              </div>
-                            </div>
-                          </div><!-- End BlueBar -->
-          </div><!-- End col -->
-</div><!-- End Row -->
-<transition name="slide">
-            <div class="row content internalPadding" v-if="isShow['Diehard']">
-          <div class="col-12">
- <!--Debut integration-2 texe info-indcription-->
-          <div class='thing'>
+       <div class='thing'>
               <div class='thing__header'>
                   <div class='thing__header__body__maj'>
                       <div class='thing__header__body__title'> Mon profil</div>
 
                       <div class="thing__header__body__content">
                           <div class='thing__header__body__content__saveOne'>Nom:</div>
-                          <div class='thing__header__body__content__saveTwo'>{{ profile.username}}</div>
+                          <div class='thing__header__body__content__saveTwo'>{{ profile.user.username}}</div>
                       </div>
 
                       <div class="thing__header__body__content">
                           <div class='thing__header__body__content__saveOne'>Email: </div>
-                          <div class='thing__header__body__content__saveTwo'> {{ profile.email}}</div>
+                          <div class='thing__header__body__content__saveTwo'> {{ profile.user.email}}</div>
                       </div>
 
                       <div class="thing__header__body__content">
@@ -55,359 +22,78 @@
 
                       <div class="thing__header__body__content" v-if=" profile.lastname ">
                           <div class='thing__header__body__content__saveOne'>Prenom:</div>
-                          <div class='thing__header__body__content__saveTwo'> {{ profile.lastname}}</div>
+                          <div class='thing__header__body__content__saveTwo'> {{ profile.user.lastname}}</div>
                       </div>
-
-                      
 
                       <div class="thing__header__body__content" v-if=" profile.usernameTradition ">
                           <div class='thing__header__body__content__saveOne'>Nom Tradition:</div>
-                          <div class='thing__header__body__content__saveTwo'>  {{ profile.usernameTradition }}</div>
+                          <div class='thing__header__body__content__saveTwo'>  {{ profile.user.usernameTradition }}</div>
                       </div>
 
                       <div class="thing__header__body__content" v-if=" profile.lastnameTradition ">
                           <div class='thing__header__body__content__saveOne'>Prenom Tradition:</div>
-                          <div class='thing__header__body__content__saveTwo'>  {{ profile.lastnameTradition}}</div>
+                          <div class='thing__header__body__content__saveTwo'>  {{ profile.user.lastnameTradition}}</div>
                       </div>
                       <div class='thing__header__body__content' v-if=" profile.dateBirthday ">
                           <div class='thing__header__body__content__saveOne'>Date Naissance:</div>
-                          <div class='thing__header__body__content__saveTwo'>  {{ profile.dateBirthday}}</div>
+                          <div class='thing__header__body__content__saveTwo'>  {{ profile.user.dateBirthday}}</div>
                       </div>
                       <div class='thing__header__body__content' v-if="profile.townBirthday">
                           <div class='thing__header__body__content__saveOne'>Ville Naissance:</div>
-                          <div class='thing__header__body__content__saveTwo'>  {{ profile.townBirthday}}</div>
+                          <div class='thing__header__body__content__saveTwo'>  {{ profile.user.townBirthday}}</div>
                       </div>
                       <div class='thing__header__body__content' v-if=" profile.sexe ">
                           <div class='thing__header__body__content__saveOne'>Civilité:</div>
-                          <div class='thing__header__body__content__saveTwo'>  {{ profile.sexe}}</div>
+                          <div class='thing__header__body__content__saveTwo'>  {{ profile.user.sexe}}</div>
                       </div>
                       <div class='thing__header__body__content' v-if="profile.nationalite">
                           <div class='thing__header__body__content__saveOne'>Nationalite:</div>
-                          <div class='thing__header__body__content__saveTwo'>  {{ profile.nationalite}}</div>
+                          <div class='thing__header__body__content__saveTwo'>  {{ profile.user.nationalite}}</div>
                       </div>
                       <div class='thing__header__body__content' v-if=" profile.adresseResid">
                           <div class='thing__header__body__content__saveOne'>AdresseResid:</div>
-                          <div class='thing__header__body__content__saveTwo'> {{ profile.adresseResid}}</div>
+                          <div class='thing__header__body__content__saveTwo'> {{ profile.user.adresseResid}}</div>
                       </div>
                       <div class='thing__header__body__content' v-if=" profile.villeResid">
                           <div class='thing__header__body__content__saveOne'>VilleResid:</div>
-                          <div class='thing__header__body__content__saveTwo'>  {{ profile.villeResid}}</div>
+                          <div class='thing__header__body__content__saveTwo'>  {{ profile.user.villeResid}}</div>
                       </div>
                       <div class='thing__header__body__content' v-if="profile.paysResid">
                           <div class='thing__header__body__content__saveOne'>PaysResid:</div>
-                          <div class='thing__header__body__content__saveTwo'>  {{ profile.paysResid}}</div>
+                          <div class='thing__header__body__content__saveTwo'>  {{ profile.user.paysResid}}</div>
                       </div>
                       <div class='thing__header__body__content' v-if="profile.tel1">
                           <div class='thing__header__body__content__saveOne'>Tel1:</div>
-                          <div class='thing__header__body__content__saveTwo'>  {{ profile.tel1}}</div>
+                          <div class='thing__header__body__content__saveTwo'>  {{ profile.user.tel1}}</div>
                       </div>
                       <div class='thing__header__body__content' v-if="profile.tel2">
                           <div class='thing__header__body__content__saveOne'>Tel2:</div>
-                          <div class='thing__header__body__content__saveTwo'>  {{ profile.tel2}}</div>
+                          <div class='thing__header__body__content__saveTwo'>  {{ profile.user.tel2}}</div>
                       </div>
                       <div class='thing__header__body__content' v-if="profile.tel3">
                           <div class='thing__header__body__content__saveOne'>Tel3:</div>
-                          <div class='thing__header__body__content__saveTwo'>  {{ profile.tel3}}</div>
+                          <div class='thing__header__body__content__saveTwo'>  {{ profile.user.tel3}}</div>
                       </div>
                       <div class='thing__header__body__content' v-if="profile.profession">
                           <div class='thing__header__body__content__saveOne'>Profession<sup>*</sup>:</div>
-                          <div class='thing__header__body__content__saveTwo'> {{ profile.profession }}</div>
+                          <div class='thing__header__body__content__saveTwo'> {{ profile.user.profession }}</div>
                       </div> 
                       <div class='thing__header__body__content' v-if="profile.activite">
                           <div class='thing__header__body__content__saveOne'>Activite:</div>
-                          <div class='thing__header__body__content__saveTwo'> {{ profile.activite }}</div>
+                          <div class='thing__header__body__content__saveTwo'> {{ profile.user.activite }}</div>
                       </div>
                       <div class='thing__header__body__content' v-if="profile.acceptOne">
                           <div class='thing__header__body__content__saveOne'>Conditons Générales:</div>
-                          <div class='thing__header__body__content__saveTwo'> {{ profile.acceptOne }}</div>
+                          <div class='thing__header__body__content__saveTwo'> {{ profile.user.acceptOne }}</div>
                       </div>
                       <div class='thing__header__body__content' v-if="profile.acceptTwo">
                           <div class='thing__header__body__content__saveOne'>Conditons Particulières:</div>
-                          <div class='thing__header__body__content__saveTwo'> {{ profile.acceptTwo }}</div>
+                          <div class='thing__header__body__content__saveTwo'> {{ profile.user.acceptTwo }}</div>
                       </div>
                   </div>
-                  <div class="col-md-12 internalPadding" style="margin-top: 15px;">
-                            <div @click="isShow['Diehard'] = !isShow['Diehard']">
-                              <div class="d-flex">
-                              <button class="ml-auto">
-                                <slot>Fermer</slot>
-                              </button>
-                              </div>
-                            </div>
-          </div>
               </div>
           </div>
-<!--fin integration-2 texe info-indcription-->
-          </div><!-- End Col -->
-          <!-- End Col -->
-          </div><!-- End Row -->
-            </transition>
-            <div class="row">
-          <div class="col-md-12 internalPadding">
-                          <div class="blueBar" @click="isShow['Predator'] = !isShow['Predator']" :class="{'red': isShow['Diehard']}">
-                            <div class="d-flex">
-                              <h2><i class="fab fa-reddit-alien"></i>&nbsp; &nbsp;Création profil </h2>
-                              <div class="ml-auto">
-                                <i class="fas fa-plus ml-auto"></i>
-                              </div>
-                            </div>
-                          </div><!-- End BlueBar -->
-          </div><!-- End col -->
-            </div><!-- End Row -->
-            <transition name="slide">
-          <div class="row content internalPadding" v-if="isShow['Predator']">
-           <div class="col-12">
-        <!--Debut integration-3 -->
-    <div class='thing'>
-        <div id="app" class='thing__header'>
-          <form @submit="postData" method="post">
-                <div class='thing__header__body__maj--background'>
-                    <!-- item 1 -->
-                    <!-- item 2 -->
-                    <div class='thing__header__body__maj__title'>
-                         Mise à jour de Mon profil
-                    </div>
-                    <div class='thing__header__body'>
-
-                            <label>Mettre à jour mon<span> prénom</span> </label>
-                            <textarea
-                                    id="lastname"
-                                    name="lastname"
-                                    placeholder="Prenom"
-                                    type="text"
-                                    v-model="posts.lastname"
-                            ></textarea>
-                            <button type="submit">Soumettre</button>
-                    </div>
-                    <!-- item 3 -->
-                    <div class='thing__header__body'>
-                            <label>Nom Traditionel</label>
-                            <textarea
-                                    id="usernameTradition"
-                                    name="usernameTradition"
-                                    placeholder="Nom-traditionel"
-                                    type="text"
-                                    v-model="posts.usernameTradition"
-                            ></textarea>
-                            <button type="submit">Soumettre</button>
-                    </div>
-                    <!-- item 4 -->
-                    <div class='thing__header__body'>
-                            <label>Prénom-traditionel</label>
-                            <textarea
-                                    id="lastnameTradition"
-                                    name="lastnameTradition"
-                                    placeholder="Prenom-traditionel"
-                                    type="text"
-                                    v-model="posts.lastnameTradition"
-                            ></textarea>
-                            <button type="submit">Soumettre</button>
-                        </div>
-                    <!-- item 5 -->
-                    <div class='thing__header__body'>
-                            <label>Date de naissance</label> 
-                            <textarea
-                                    id="dateBirthday"
-                                    name="dateBirthday"
-                                    placeholder="jour/mois/année"
-                                    type="text"
-                                    v-model="posts.dateBirthday"
-                            ></textarea>
-                            <button type="submit">Soumettre</button>
-                        </div>
-                  <!-- item 6 -->
-                    <div class='thing__header__body'>
-                            <label>Ville de naissance</label>
-                            <textarea
-                                    id="townBirthday"
-                                    name="townBirthday"
-                                    placeholder="Ville de naissance"
-                                    type="text"
-                                    v-model="posts.townBirthday"
-                            ></textarea>
-                            <button type="submit">Soumettre</button>
-                        </div>
-                  <!-- item 7 -->
-                    <div class='thing__header__body'>
-                          <label>Civilité</label>
-                            <input 
-                          type="radio" 
-                          id="homme" 
-                          value="homme" 
-                          v-model="posts.sexe">
-                          <label for="homme">homme</label>
-                          <input 
-                          type="radio" 
-                          id="femme" 
-                          value="femme" 
-                          v-model="posts.sexe">
-                          <label for="femme">femme</label>
-                            <button type="submit">Soumettre</button>
-                        </div>
-                  <!-- item 8 -->
-                    <div class='thing__header__body'>
-                            <label>Nationalité</label> 
-                            <textarea
-                                    id="nationalite"
-                                    name="nationalite"
-                                    placeholder="Nationalité"
-                                    type="text"
-                                    v-model="posts.nationalite"
-                            ></textarea>
-                            <button type="submit">Soumettre</button>
-                        </div>
-                  <!-- item 9 -->
-                    <div class='thing__header__body'>
-                            <label>Adresse postale de résidence</label>
-                            <textarea
-                                    id="adresseResid"
-                                    name="adresseResid"
-                                    placeholder="Adresse postale"
-                                    type="text"
-                                    v-model="posts.adresseResid"
-                            ></textarea>
-                            <button type="submit">Soumettre</button>
-                        </div>
-                  <!-- item 10 -->
-                    <div class='thing__header__body'>
-                            <label>Ville de résidence</label>
-                            <textarea
-                                    id="villeResid"
-                                    name="villeResid"
-                                    placeholder="Ville de résidence"
-                                    type="text"
-                                    v-model="posts.villeResid"
-                            ></textarea>
-                            <button type="submit">Soumettre</button>
-                        </div>
-                  <!-- item 11 -->
-                    <div class='thing__header__body'>
-                            <label>Pays de résidence</label>
-                            <textarea
-                                    id="paysResid"
-                                    name="paysResid"
-                                    placeholder="Pays de Résidence"
-                                    type="text"
-                                    v-model="posts.paysResid"
-                            ></textarea>
-                            <button type="submit">Soumettre</button>
-                        </div>
-                  <!-- item 12 -->
-                    <div class='thing__header__body'>
-                            <label>Telephone</label>
-                            <textarea
-                                    id="tel1"
-                                    name="tel1"
-                                    placeholder="tel-1"
-                                    type="text"
-                                    v-model="posts.tel1"
-                            ></textarea>
-                            <button type="submit">Soumettre</button>
-                        </div>
-                  <!-- item 13 -->
-                    <div class='thing__header__body'>
-                            <label>Inserez <span> N° de  tel wats'app</span></label> 
-                            <textarea
-                                    id="tel2"
-                                    name="tel2"
-                                    placeholder="tel-2"
-                                    type="text"
-                                    v-model="posts.tel2"
-                            ></textarea>
-                            <button type="submit">Soumettre</button>
-                        </div>
-                  <!-- item 14 -->
-                    <div class='thing__header__body'>
-                            <label>Inserez un 3eme N°(facultatif)</label>
-                            <textarea
-                                    id="tel3"
-                                    name="tel3"
-                                    placeholder="tel-3"
-                                    type="text"
-                                    v-model="posts.tel3"
-                            ></textarea>
-                            <button type="submit">Soumettre</button>
-                    </div>
-                  <!-- item 15 -->
-                    <div class='thing__header__body'>
-                            <label>Profession)</label>
-                            <textarea
-                                    id="profession"
-                                    name="profession"
-                                    placeholder="profession"
-                                    type="text"
-                                    v-model="posts.profession"
-                            ></textarea>
-                            <button type="submit">Soumettre</button>
-                    </div>
-                  <!-- item 16 -->
-                    <div class='thing__header__body'>
-                            <label>Activite</label>
-                            <textarea
-                                    id="activite"
-                                    name="activite"
-                                    placeholder="activite"
-                                    type="text"
-                                    v-model="posts.activite"
-                            ></textarea>
-                            <button type="submit">Soumettre</button>
-                    </div>
-                    <div class='thing__header__body'>
-                                  <input
-                                          type="checkbox"
-                                          v-model="posts.acceptOne"
-                                          id="acceptOne"
-                                          class="form-check-input"
-                                  >
-                                <label class="form-check-label" for="acceptOne"> - J'ai lu les conditions générales.
-                                </label>
-                            <button type="submit">Soumettre</button>
-                    </div>
-                      <div class='thing__header__body'>
-                                  <input
-                                          type="checkbox"
-                                          v-model="posts.acceptTwo"
-                                          id="acceptTwo"
-                                          class="form-check-input"
-                                  >
-                                <label class="form-check-label" for="acceptTwo"> - J'ai lu les conditions particulières.
-                                </label>
-                            <button type="submit">Soumettre</button>
-                    </div>
-              </div>
-          </form>
-            <div class="col-md-12 internalPadding" style="margin-top: 15px;">
-                            <div @click="isShow['Predator'] = !isShow['Predator']">
-                              <div class="d-flex">
-                              <button class="ml-auto">
-                                <slot>Fermez</slot>
-                              </button>
-                              </div>
-                            </div>
-            </div>
-        </div>
-        
-    </div>
-        <!--Fin integration-3 --> 
-                        <!-- End Col -->
-        </div><!-- End Col -->
-            </div><!-- End Row -->
-            </transition>
-            </div><!-- End Col -->
-        <!-- Fin integration-1 -->
-                          <div class="col-md-12 internalPadding" style="margin-top: 15px;">
-                            <div @click="isShow['Star'] = !isShow['Star']">
-                               <div class="d-flex">
-                                  <button class="ml-auto">
-                                    <slot>Fermez</slot>
-                                  </button>
-                               </div>
-                            </div>
-                          </div><!-- End Col -->
-            </div><!-- End Row -->
-            </transition>
       </div><!-- End Container -->
-    </div><!-- End App -->
 </template>
 <script>
   import axios from 'axios';
@@ -467,6 +153,7 @@
         })
         .then(response => {
           this.profile = response.data
+          console.log(this.profile);
           this.testUser = this.profile.testUser
         })
         .catch((error) => console.log(error()))

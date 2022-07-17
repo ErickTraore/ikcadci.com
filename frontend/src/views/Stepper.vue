@@ -3,7 +3,6 @@
         <center>
               <div class="inscription">Je m'inscrits à une formation chez Kemetmaat! </div>
                 <h2 class="page"> {{ page }}</h2>
-
               <ul class="stepper">
                 <a href="#"   class="stepper__item"  v-on:click="page =1" :class="{'stepper__item current': page === 1}"><li>1-Identification </li></a>
                 <a href="#"   class="stepper__item"  v-on:click="page =2" :class="{'stepper__item current': page === 2}"><li>2-Choisir ma formation</li></a>
@@ -18,32 +17,27 @@
                           <InfoComponent/>
                       </div>
                     </div>
-
-
                     <div v-if="page==2" id="sec_two">
                      <div class="stepper2">
                           <SignupInscriptionComponent/>
                       </div>
                     </div>
-
                     <div v-if="page==3" id="sec_three">
                        <div class="stepper2">
                           <PieceComponent/>
                       </div>
                     </div>
-
                      <div v-if="page==4" id="sec_four">
                        <div class="stepper2">
                           <EngagementComponent/>
                       </div>
                     </div>
-
                     <div v-if="page==5" id="sec_five">
                         <div class="stepper2">
                           <FormulaireComponent/>
                         </div>
                     </div>
-            </div>
+                </div>
                 <div v-if="page <= 4 ">
                     <div id="b">
                       <div id="b_left">
@@ -60,12 +54,11 @@
                           <button  class="btn-left" type="submit" v-on:click="page <= 5 && page > 1  ? page -=1 :  ''" >Retour </button>
                       </div>
                       <div id="b_right">
-                          <button  class="btn-right" @click="myFunction()" >Validez</button>
+                          <button  class="btn-right" >Fin</button>
                       </div>
                     </div>
                 </div>
         </center>
-
     </div>
 </template>
 <script>

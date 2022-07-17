@@ -1,6 +1,6 @@
 <template>
     <div class='group__header'>
-     <div>INSCRIPTION</div>
+     <div>S'enregistrer sur le site: KEMETMAAT</div>
         <form @submit="postData" method="post">
             <div class='group__header__body'>
                 <p v-if="errors.length">
@@ -9,7 +9,6 @@
                     <li v-for="error in errors" :key="error">{{ error }}</li>
                 </ul>
                 </p>
-
                 <p>
                     <label for="username">Pseudo* </label>
                     <input
@@ -37,38 +36,30 @@
                             name="password"
                     >
                 </p>
-                <p>
-                    <label for="biographie">Biographie </label>
-                    <input
-                            id="biographie"
-                            v-model="user.biographie"
-                            type="text"
-                            name="biographie"
-                    >
-                </p>
+             
                 <button class="btn"> S'inscrire</button>
             </div>
         </form>
          <div>Vous avez déja un compte:</div>
      <div>
+        {{ pass }}
         <a href="/">Connectez-vous içi</a>
         </div>
      </div>
 </template>
-
 <script>
   import Vue from "vue";
-  
   import VueAxios from "vue-axios";
   import axios from "axios";
+  import { mapState } from 'vuex'
 
   Vue.use(VueAxios, axios)
   export default {
     name: 'SignupComponent',
     data() {
       return {
+        testEmail: '',
         errors: [],
-        testEmail: true,
         user: {
           username: null,
           biographie: null,
@@ -77,55 +68,99 @@
         }
       }
     },
-   methods: {
+  components: {
+  },
+  computed: {
+        ...mapState(['pass']),
+  },
+  methods: {
+   
       postData: function (e) {
 
         e.preventDefault();
         this.errors = [];
-     
+
         if (!this.user.password) {
           this.errors.push('Veillez saisir un mot de passe');
-        } else if (!this.validPassword(this.user.password)) {
-          this.errors.push('Votre mot de passe doit contenir entre 4 et 20 caractères et au moins un chiffre');
+          }
+        if (!this.validPasswordGle(this.user.password)) {
+          this.errors.push('Mot de passe est invalide');
+        }
+         if (!this.validPasswordTotal(this.user.password)) {
+          this.errors.push('Saisir entre 8 et 30 caractères');
+        }
+        if (!this.validPasswordMinuscule(this.user.password)) {
+          this.errors.push('Saisir au moins une minuscule');
+        }
+        if (!this.validPasswordMajuscule(this.user.password)) {
+          this.errors.push('Saisir au moins une majuscule');
+        }
+        if (!this.validPasswordChiffre(this.user.password)) {
+          this.errors.push('Saisir au moins un chiffre');
+        }
+        if (!this.validPasswordSpecial(this.user.password)) {
+          this.errors.push('Saisir au moins un caractère spécial');
+        }
+        if (!this.validPasswordVide(this.user.password)) {
+          this.errors.push('Saisir aucun espace vide');
         }
         if (!this.user.username || this.user.username.length >= 21 || this.user.username.length <= 3) {
-          this.errors.push('Votre pseudo doit contenir entre 4 et 20 caractères');
+          this.errors.push('Votre pseudo doit contenir entre 4 et 30 caractères');
         }
         if (!this.user.email) {
           this.errors.push('Veillez saisir votre email');
         } else if (!this.validEmail(this.user.email)) {
           this.errors.push('L\'adresse email est invalide.');
-        } 
-        if (this.testEmail == false) {
-          this.errors.push('L\'adresse email existe déja.');
         }
         if (!this.errors.length) {
           return this.post(this.user);
         }
-
       },
-  
+
       post: function (user) {
-        this.axios.post('https://212.227.142.69:3000/api/users/register/', user)
-          .then(response => {
-            this.data = response.data
-             this.$router.push({path: '/'})
-              })
-          .catch((error) => {
-            console.log(error)
-            // demarrer le serveur obligatoirement avant cette ligne
-            // this.errors.push('L\'adresse email existe déjà.');
-            this.$router.push({path: '/signup'})
-            })
-      },
+       this.axios.post('https://212.227.142.69:3000/api/users/register/', user)
+                .then(response => {
+                      this.data = response.data
+                      this.$router.push({path: '/'})
+                          })
+                .catch((error) => {
+                      console.log(error)
+                      this.errors.push("Cet email est déja utilisé")
+                      this.errors.push("veuillez choisir un autre svp!")
 
+                })
+      },
       validEmail: function (email) {
         const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return regex.test(email);
 
       },
-      validPassword: function (password) {
-        const regex = /^(?=.*\d).{4,20}$/;
+      validPasswordGle: function (password) {
+        const regex = /^(?=.{08,30}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)(?!.*\s).*$/;
+        return regex.test(password);
+      },
+      validPasswordTotal: function (password) {
+        const regex = /^(?=.{08,30}$).*$/;
+        return regex.test(password);
+      },
+       validPasswordMinuscule: function (password) {
+        const regex = /^(?=.*[a-z]).*$/;
+        return regex.test(password);
+      },
+       validPasswordMajuscule: function (password) {
+        const regex = /^(?=.*[A-Z]).*$/;
+        return regex.test(password);
+      },
+       validPasswordChiffre: function (password) {
+        const regex = /^(?=.*[0-9]).*$/;
+        return regex.test(password);
+      },
+       validPasswordSpecial: function (password) {
+        const regex = /^(?=.*\W).*$/;
+        return regex.test(password);
+      },
+       validPasswordVide: function (password) {
+        const regex = /^(?!.*\s).*$/;
         return regex.test(password);
       }
     }

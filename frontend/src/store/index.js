@@ -9,7 +9,10 @@ export default new Vuex.Store({
     state: {
         titreFromVuex: "ma valeur",
         logged: true,
-        role: false
+        pass: true,
+        role: false,
+        notifDisplay: true
+
 
     },
     plugins: [createPersistedState()],
@@ -20,6 +23,13 @@ export default new Vuex.Store({
         },
         BEFORE_LOGGED(state) {
             state.logged = true
+        },
+        AFTER_PASS(state) {
+            state.pass = true
+
+        },
+        BEFORE_PASS(state) {
+            state.pass = false
         }
 
     },
@@ -32,11 +42,20 @@ export default new Vuex.Store({
             context.commit("BEFORE_LOGGED")
 
         },
+        afterPass(context) {
+            context.commit("AFTER_PASS")
+        },
+        beforePass(context) {
+            context.commit("BEFORE_PASS")
+
+        },
 
     },
 
     getters: {
+        getNotif: (state) => {
+            return state.notifDisplay
+        }
 
-
-    }
+    },
 })

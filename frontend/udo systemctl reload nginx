@@ -1,0 +1,24 @@
+[0;1;32m●[0m nginx.service - The nginx HTTP and reverse proxy server
+   Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; vendor preset: disabled)
+  Drop-In: /usr/lib/systemd/system/nginx.service.d
+           └─php-fpm.conf
+   Active: [0;1;32mactive (running)[0m since Fri 2022-07-15 06:36:55 UTC; 27ms ago
+  Process: 34043 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
+  Process: 34040 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+  Process: 34038 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+ Main PID: 34044 (nginx)
+    Tasks: 3 (limit: 11216)
+   Memory: 5.4M
+   CGroup: /system.slice/nginx.service
+           ├─34044 nginx: master process /usr/sbin/nginx
+           ├─34045 nginx: worker process
+           └─34046 nginx: worker process
+
+Jul 15 06:36:55 localhost.localdomain systemd[1]: nginx.service: Succeeded.
+Jul 15 06:36:55 localhost.localdomain systemd[1]: Stopped The nginx HTTP and reverse proxy server.
+Jul 15 06:36:55 localhost.localdomain systemd[1]: Starting The nginx HTTP and reverse proxy server...
+Jul 15 06:36:55 localhost.localdomain nginx[34040]: nginx: [warn] conflicting server name "217.160.29.241" on 0.0.0.0:80, ignored
+Jul 15 06:36:55 localhost.localdomain nginx[34040]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+Jul 15 06:36:55 localhost.localdomain nginx[34040]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+Jul 15 06:36:55 localhost.localdomain nginx[34043]: nginx: [warn] conflicting server name "217.160.29.241" on 0.0.0.0:80, ignored
+Jul 15 06:36:55 localhost.localdomain systemd[1]: Started The nginx HTTP and reverse proxy server.

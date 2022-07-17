@@ -33,14 +33,14 @@
                                             <button 
                                                 id="button"
                                                 v-on:click="doSeen(item.UserId)">
-                                                Consulter
+                                                Consultez un dossier
                                             </button>
                                         </div> 
                                         <div> 
                                             <button 
                                                 v-on:click='goStudent(item.UserId)'
                                                 >
-                                                Envoyez un mail.
+                                                Selectionnez un mail.
                                             </button>
                                         </div>
                                     </td>
@@ -250,17 +250,6 @@
                   </div>
               </div>
               <div v-if="!templateView">
-                <GoMailerComponent>
-                    <button
-                    @click='theMailer'
-                    >
-                    Dossier test
-                    </button>
-                    <button
-                    v-on:click='goOfMailer'
-                    >
-                    Dossier conforme Demande de paiement
-                    </button>
                 <GoMailerComponent />
               </div>
             </div>
@@ -288,9 +277,10 @@
             </div>
 
             <div>
-                <form
-                >
+                <form>
+                <div class="email">
                     <select
+                            class="email__select"
                             v-model="posts.message"
                             onchange="document.getElementById('text').value=this.value"
                             >
@@ -302,25 +292,36 @@
                             <option value="Dossier refusé pour non respect des conditions académiques  requises, detailed information and change your preferences before consenting or to 
                                                     refuse consenting.Please note that some processing of your personal data may not 
                                                     require your consent, but ">Objet: Dossier refusé</option>
+                            <option value="Paiement accepté conformement aux conditions académiques  requises, detailed information and change your preferences before consenting or to 
+                                                    refuse consenting.Please note that some processing of your personal data may not 
+                                                    require your consent, but ">Objet: Paiement accepté. creation de classe</option>
                     </select>
-
+                </div>
+                <div>
                   <label for="message">Message</label>
-                  <input 
+                  <textarea
+                  class="email__textarea"
                   name="message"
                   type="text" 
                   id="message"
                   v-model="posts.message"
-                  >
+                  row="100"
+                  />
+                </div>
+                <div>
 
-                   <button 
+                   <button
+                    class="email__textarea__button"
                     v-on:click="goMailer(student.UserId)">
-                    Accepter-Completez-Refuser
+                    Envoyer un mail à{{ student.username }}{{ student.lastname }}
                    </button>
                    
-                   <button 
+                   <button
+                    class="email__textarea__buttonbis"
                     v-on:click="goMailer(student.UserId)">
-                    Supprimez
+                    Annulez 
                    </button>
+                </div>
                 </form>
             </div>
 </template>
@@ -375,7 +376,7 @@
         let objMySession = localStorage.getItem("obj")
         let myStorageToken = JSON.parse(objMySession)
         let token = myStorageToken.myToken;
-      axios
+    axios
         .get('https://212.227.142.69:3000/api/students/' + id + '/seen', {
           headers: {
             'Authorization': token
@@ -427,9 +428,8 @@
           })
           .catch(error => console.log(error()))
         e.preventDefault();
-
       },
-         goMailer: function (id) {
+      goMailer: function (id) {
           console.log('je suis un yankee')
           console.log(id)
         let objMySession = localStorage.getItem("obj")
@@ -465,3 +465,35 @@
       }
     }
 </script>
+<style>
+.email {
+  width: 100%;
+  heigth: auto;
+  display:flex;
+  flex-direction:column;
+}
+.email__select{
+  width: 50%;
+  display:flex;
+}
+.email__textarea{
+  width: 80%;
+  padding: 10px;
+  margin: 20px 20px;
+  font-size: 14px;
+}
+.email__textarea__button{
+  width: auto;
+  heigth: auto;
+  padding: 2px;
+  border-radius:20px;
+  background-color: #b3e7b3;
+}
+.email__textarea__buttonbis{
+  width: auto;
+  heigth: auto;
+  margin: 10px 18px;
+  border-radius:20px;
+  background-color: orange;
+}
+</style>

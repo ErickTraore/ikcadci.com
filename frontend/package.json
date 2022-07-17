@@ -18,6 +18,7 @@
         "cors": "^2.8.5",
         "dns": "^0.2.2",
         "express": "^4.17.3",
+        "extractor": "^0.1.2",
         "http-server": "^14.1.0",
         "install": "^0.13.0",
         "interceptors": "^1.0.2",
